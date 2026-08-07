@@ -1,6 +1,57 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Enforce properties for strict mobile autoplay compliance (iOS Safari & Android Chrome)
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const attemptPlay = () => {
+      if (video && video.paused) {
+        video.play().catch(() => {
+          // Autoplay initially blocked, waiting for user interaction or event
+        });
+      }
+    };
+
+    attemptPlay();
+
+    video.addEventListener('canplay', attemptPlay);
+    video.addEventListener('loadeddata', attemptPlay);
+
+    // Fallback: start playing as soon as user touches or scrolls on mobile screen
+    const handleUserInteraction = () => {
+      attemptPlay();
+    };
+
+    window.addEventListener('touchstart', handleUserInteraction, { passive: true });
+    window.addEventListener('pointerdown', handleUserInteraction, { passive: true });
+    window.addEventListener('scroll', handleUserInteraction, { passive: true });
+
+    const handleVisibility = () => {
+      if (!document.hidden) {
+        attemptPlay();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    return () => {
+      video.removeEventListener('canplay', attemptPlay);
+      video.removeEventListener('loadeddata', attemptPlay);
+      window.removeEventListener('touchstart', handleUserInteraction);
+      window.removeEventListener('pointerdown', handleUserInteraction);
+      window.removeEventListener('scroll', handleUserInteraction);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Background Video */}
@@ -11,11 +62,21 @@ export function Hero() {
         className="absolute inset-0 w-full h-full z-0"
       >
         <video
+          ref={videoRef}
           src="/hero.mp4"
           autoPlay
           loop
           muted
+          defaultMuted
           playsInline
+          preload="auto"
+          aria-hidden="true"
+          onEnded={() => {
+            if (videoRef.current) {
+              videoRef.current.currentTime = 0;
+              videoRef.current.play().catch(() => {});
+            }
+          }}
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Softened gradient overlay: reduced black density for a lighter, more transparent feel */}
