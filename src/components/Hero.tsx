@@ -8,15 +8,23 @@ export function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Enforce properties for strict mobile autoplay compliance (iOS Safari & Android Chrome)
+    // Enforce properties and attributes for strict mobile autoplay compliance (iOS Safari & Android Chrome)
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('webkit-playsinline', 'true');
+    video.setAttribute('x5-playsinline', 'true');
+    video.setAttribute('muted', 'true');
     video.muted = true;
     video.defaultMuted = true;
+    video.controls = false;
 
     const attemptPlay = () => {
       if (video && video.paused) {
-        video.play().catch(() => {
-          // Autoplay initially blocked, waiting for user interaction or event
-        });
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            // Autoplay blocked by mobile OS power save mode; will start on first touch/scroll
+          });
+        }
       }
     };
 
@@ -24,15 +32,16 @@ export function Hero() {
 
     video.addEventListener('canplay', attemptPlay);
     video.addEventListener('loadeddata', attemptPlay);
+    video.addEventListener('loadedmetadata', attemptPlay);
 
-    // Fallback: start playing as soon as user touches or scrolls on mobile screen
+    // Immediate user interaction triggers for mobile
     const handleUserInteraction = () => {
       attemptPlay();
     };
 
-    window.addEventListener('touchstart', handleUserInteraction, { passive: true });
-    window.addEventListener('pointerdown', handleUserInteraction, { passive: true });
-    window.addEventListener('scroll', handleUserInteraction, { passive: true });
+    window.addEventListener('touchstart', handleUserInteraction, { passive: true, capture: true });
+    window.addEventListener('pointerdown', handleUserInteraction, { passive: true, capture: true });
+    window.addEventListener('scroll', handleUserInteraction, { passive: true, capture: true });
 
     const handleVisibility = () => {
       if (!document.hidden) {
@@ -45,9 +54,10 @@ export function Hero() {
     return () => {
       video.removeEventListener('canplay', attemptPlay);
       video.removeEventListener('loadeddata', attemptPlay);
-      window.removeEventListener('touchstart', handleUserInteraction);
-      window.removeEventListener('pointerdown', handleUserInteraction);
-      window.removeEventListener('scroll', handleUserInteraction);
+      video.removeEventListener('loadedmetadata', attemptPlay);
+      window.removeEventListener('touchstart', handleUserInteraction, { capture: true });
+      window.removeEventListener('pointerdown', handleUserInteraction, { capture: true });
+      window.removeEventListener('scroll', handleUserInteraction, { capture: true });
       document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, []);
@@ -55,15 +65,11 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Background Video */}
-      <motion.div
-        initial={{ opacity: 0, scale: 1.08 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.8, ease: 'easeOut' }}
-        className="absolute inset-0 w-full h-full z-0"
-      >
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <video
           ref={videoRef}
           src="/hero.mp4"
+          poster="/hero.png"
           autoPlay
           loop
           muted
@@ -77,11 +83,11 @@ export function Hero() {
               videoRef.current.play().catch(() => {});
             }
           }}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
-        {/* Softened gradient overlay: reduced black density for a lighter, more transparent feel */}
+        {/* Softened gradient overlay */}
         <div className="absolute inset-0 bg-black/35 md:bg-gradient-to-r md:from-black/55 md:via-black/30 md:to-transparent z-10" />
-      </motion.div>
+      </div>
 
       {/* Content */}
       <div className="relative z-20 w-full md:w-1/2 px-8 md:px-16 flex flex-col justify-center min-h-screen space-y-8 pt-36 pb-16 md:pt-0">
