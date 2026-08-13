@@ -75,7 +75,7 @@ export function Testimonials() {
             </p>
             <h2 className="text-3xl md:text-4xl font-light text-white font-display">
               O que nossos clientes<br />
-              <span className="font-semibold">dizem sobre nós.</span>
+              <span className="font-bold text-blue-300">dizem sobre nós.</span>
             </h2>
           </div>
 
@@ -140,7 +140,7 @@ export function Testimonials() {
                   {t.avatar}
                 </div>
                 <div>
-                  <p className={`text-xs font-semibold ${active === i ? 'text-primary' : 'text-white'}`}>{t.name}</p>
+                  <p className={`text-xs font-bold ${active === i ? 'text-[#007799]' : 'text-white'}`}>{t.name}</p>
                   <p className={`text-[10px] mt-0.5 ${active === i ? 'text-gray-400' : 'text-white/40'}`}>
                     {t.date}
                   </p>

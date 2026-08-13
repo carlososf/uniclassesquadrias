@@ -23,7 +23,7 @@ export function Philosophy() {
               </p>
               <h2 className="text-4xl md:text-5xl font-light leading-tight text-primary font-display">
                 Especialistas em<br />
-                <span className="font-semibold">esquadrias para</span><br />
+                <span className="font-bold text-[#007799]">esquadrias para</span><br />
                 projetos exigentes.
               </h2>
             </div>
@@ -46,7 +46,7 @@ export function Philosophy() {
                   className="h-12 object-contain transition-all duration-300"
                 />
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">Empresa Registrada CREA-SP</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#007799]">Empresa Registrada CREA-SP</p>
                   <p className="text-xs text-gray-500 font-light mt-0.5">Responsabilidade técnica e engenharia certificada</p>
                 </div>
               </div>

@@ -71,17 +71,45 @@ export const categoryData: Record<string, CategoryInfo> = {
   },
   projetos: {
     id: 'projetos',
-    title: 'Projetos Residenciais Executados',
-    subtitle: 'Fachadas completas, frentes de casas e obras de alto padrão',
+    title: 'Obras Residenciais Executadas',
+    subtitle: 'Divisão por casas de alto padrão e suas respectivas obras de esquadria',
     description:
-      'Coleção reunida com todas as fachadas residenciais, frentes de casas e projetos especiais executados pela Uniclass Esquadrias. Fotos reais sem repetição mostrando a excelência da produção própria e instalação.',
+      'Coleção reunida com todas as obras residenciais, frentes de casas e esquadrias sob medida executadas pela Uniclass Esquadrias. Fotos reais sem repetição mostrando a excelência da produção própria e instalação.',
     features: [
-      'Fachadas e frentes de residências de alto padrão',
+      'Divisão organizada por casas de alto padrão e suas obras',
       'Execução fiel ao projeto arquitetônico original',
       'Acompanhamento técnico desde o gabarito à instalação',
       'Garantia e conformidade técnica CREA-SP',
     ],
-    photos: Array.from({ length: 30 }, (_, i) => `/gallery/projetos/projetos-${i + 1}.webp`),
+    photos: [
+      ...Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
+      ...Array.from({ length: 12 }, (_, i) => `/gallery/casas/kw-alphaville/kw-alphaville-${i + 1}.webp`),
+      ...Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
+      ...Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
+      ...Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
+      ...Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
+    ],
+  },
+  obras: {
+    id: 'obras',
+    title: 'Obras Residenciais Executadas',
+    subtitle: 'Divisão por casas de alto padrão e suas respectivas obras de esquadria',
+    description:
+      'Coleção reunida com todas as obras residenciais, frentes de casas e esquadrias sob medida executadas pela Uniclass Esquadrias. Fotos reais sem repetição mostrando a excelência da produção própria e instalação.',
+    features: [
+      'Divisão organizada por casas de alto padrão e suas obras',
+      'Execução fiel ao projeto arquitetônico original',
+      'Acompanhamento técnico desde o gabarito à instalação',
+      'Garantia e conformidade técnica CREA-SP',
+    ],
+    photos: [
+      ...Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
+      ...Array.from({ length: 12 }, (_, i) => `/gallery/casas/kw-alphaville/kw-alphaville-${i + 1}.webp`),
+      ...Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
+      ...Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
+      ...Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
+      ...Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
+    ],
   },
 };
 
@@ -200,7 +228,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
               className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-200/80"
             >
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#007799] mb-3">
                   Sobre esta Coleção
                 </h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed">
@@ -209,7 +237,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
               </div>
 
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#007799] mb-3">
                   Diferenciais Técnicos
                 </h3>
                 <ul className="space-y-2 text-sm text-gray-600 font-light">

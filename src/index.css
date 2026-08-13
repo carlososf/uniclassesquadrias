@@ -9,6 +9,12 @@
   --color-accent: #00BFA5;
   --color-divider: #EEEEEE;
   --color-off-white: #F9F9F9;
+  --color-bold-blue: #007799;
+  --color-logo-blue: #70D2DD;
+}
+
+.text-bold-blue {
+  color: #007799;
 }
 
 :root {

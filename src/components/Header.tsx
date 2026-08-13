@@ -6,7 +6,7 @@ import { HiMenuAlt3, HiX } from 'react-icons/hi';
 const navLinks = [
   { name: 'Sobre Nós', href: '#about' },
   { name: 'Coleções', href: '#collections' },
-  { name: 'Projetos', href: '#projects' },
+  { name: 'Obras', href: '#projects' },
   { name: 'Orçamento', href: '#contact' },
 ];
 
@@ -27,30 +27,30 @@ export function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out px-6 md:px-12',
         isScrolled
-          ? 'bg-primary/95 backdrop-blur-md shadow-lg py-3'
-          : 'bg-primary py-5'
+          ? 'bg-primary/95 backdrop-blur-md shadow-lg py-2.5'
+          : 'bg-primary py-3.5'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo & CREA Badge */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <a href="#" className="block hover:opacity-85 transition-opacity">
             <img
               src="/logo.png"
               alt="Uniclass Logo"
               className={cn(
-                'transition-all duration-500 object-contain',
-                isScrolled ? 'h-12 md:h-14' : 'h-16 md:h-20'
+                'transition-all duration-500 object-contain scale-125 md:scale-140 origin-left py-1',
+                isScrolled ? 'h-12 md:h-14' : 'h-14 md:h-16'
               )}
             />
           </a>
-          <div className="hidden sm:flex items-center gap-2 pl-4 border-l border-white/15">
+          <div className="hidden sm:flex items-center gap-2.5 pl-6 border-l border-white/15">
             <img
               src="/crea-sp.png"
               alt="CREA-SP Registro Técnico"
               className={cn(
                 'object-contain transition-all duration-500 brightness-0 invert opacity-80 hover:opacity-100',
-                isScrolled ? 'h-7' : 'h-9'
+                isScrolled ? 'h-7' : 'h-8'
               )}
             />
             <span className="text-[10px] uppercase tracking-wider text-white/50 leading-tight hidden lg:inline-block">

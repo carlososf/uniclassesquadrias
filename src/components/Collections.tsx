@@ -38,7 +38,7 @@ export function Collections() {
         <h2 className="text-4xl md:text-5xl font-light text-primary mb-4 font-display">As Coleções</h2>
         <div className="w-16 h-1 bg-accent"></div>
         <p className="text-gray-500 font-light mt-3 text-sm">
-          Clique em qualquer coleção para visualizar a galeria exclusiva com fotos de projetos executados.
+          Clique em qualquer coleção para visualizar a galeria exclusiva com fotos de obras executadas.
         </p>
       </div>
 

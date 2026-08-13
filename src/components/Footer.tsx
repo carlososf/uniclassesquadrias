@@ -30,22 +30,22 @@ export function Footer() {
 
         {/* Contact Info */}
         <div>
-          <h3 className="font-medium text-primary mb-4 uppercase tracking-wider text-xs">Contato</h3>
+          <h3 className="font-bold text-[#007799] mb-4 uppercase tracking-wider text-xs">Contato</h3>
           <p className="mb-2 italic">Vila Jovina, Cotia - SP</p>
           <p className="mb-2">contato@uniclassesquadrias.com.br</p>
-          <p className="mb-2 font-medium">(11) 99999-9999</p>
+          <p className="mb-2 font-bold text-[#007799]">(11) 99999-9999</p>
         </div>
 
         {/* Info Column & CREA */}
         <div>
-          <h3 className="font-medium text-primary mb-4 uppercase tracking-wider text-xs">Informações</h3>
+          <h3 className="font-bold text-[#007799] mb-4 uppercase tracking-wider text-xs">Informações</h3>
           <p className="mb-2">CNPJ: 30.752.817/0001-87</p>
-          <p className="mb-4 font-bold tracking-tighter text-gray-800">UNICLASS ESQUADRIAS</p>
+          <p className="mb-4 font-bold tracking-tighter text-[#007799]">UNICLASS ESQUADRIAS</p>
           
           <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
             <img src="/crea-sp.png" alt="CREA-SP Logo" className="h-9 object-contain" />
             <div>
-              <p className="text-[11px] font-semibold text-primary uppercase">Empresa Registrada</p>
+              <p className="text-[11px] font-bold text-[#007799] uppercase">Empresa Registrada</p>
               <p className="text-[10px] text-gray-400">CREA-SP Nº 30.752.817/0001-87</p>
             </div>
           </div>
@@ -54,7 +54,7 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] uppercase tracking-[0.2em] text-gray-400">
         <p className="hover:text-primary transition-colors cursor-default">
-          DESENVOLVIDO POR <span className="font-bold text-gray-600">UEBI STUDIO</span>
+          DESENVOLVIDO POR <span className="font-bold text-[#007799]">UEBI STUDIO</span>
         </p>
         <p>&copy; {new Date().getFullYear()} Uniclass. Todos os direitos reservados.</p>
       </div>

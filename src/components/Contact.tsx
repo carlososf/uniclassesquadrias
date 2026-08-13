@@ -197,7 +197,7 @@ export function Contact() {
                 <FaWhatsapp className="text-green-500 text-2xl" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] font-semibold text-primary group-hover:text-accent transition-colors">WhatsApp</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">WhatsApp</p>
                 <p className="text-sm text-gray-400 font-light mt-0.5">Resposta rápida · Seg–Sáb 8h–18h</p>
               </div>
               <HiArrowRight className="ml-auto text-gray-300 group-hover:text-accent transition-colors" />
@@ -212,7 +212,7 @@ export function Contact() {
                 <FaEnvelope className="text-accent text-xl" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] font-semibold text-primary group-hover:text-accent transition-colors">E-mail</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">E-mail</p>
                 <p className="text-sm text-gray-400 font-light mt-0.5">Para projetos e parcerias</p>
               </div>
               <HiArrowRight className="ml-auto text-gray-300 group-hover:text-accent transition-colors" />
