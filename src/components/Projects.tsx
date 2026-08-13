@@ -109,17 +109,12 @@ export const housesData: HouseProject[] = [
 
 export function Projects() {
   const [selectedHouse, setSelectedHouse] = useState<HouseProject | null>(null);
-  const [activeFilter, setActiveFilter] = useState<string>('todas');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
 
-  const filteredHouses = activeFilter === 'todas'
-    ? housesData
-    : housesData.filter((h) => h.id === activeFilter);
-
   return (
-    <section className="py-24 bg-white" id="projects">
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+    <section className="py-24 bg-gray-50/50" id="projects">
+      <div className="max-w-7xl mx-auto px-6 mb-14 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-accent font-bold mb-2">
             Portfólio de Residências
@@ -127,8 +122,8 @@ export function Projects() {
           <h2 className="text-4xl md:text-5xl font-light text-primary font-display">
             Nossas <strong className="font-bold text-[#007799]">Obras</strong>
           </h2>
-          <p className="text-gray-500 font-light mt-2 text-sm max-w-xl">
-            Conheça a divisão por casas e as obras de esquadrias em alumínio executadas em cada projeto residencial de alto padrão.
+          <p className="text-gray-500 font-light mt-3 text-sm max-w-xl leading-relaxed">
+            Estes são apenas alguns de nossos projetos residenciais de alto padrão executados com esquadrias de alumínio sob medida.
           </p>
           <div className="w-16 h-1 bg-accent mt-4"></div>
         </div>
@@ -141,43 +136,16 @@ export function Projects() {
         </button>
       </div>
 
-      {/* House Filter Tabs */}
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap gap-2">
-        <button
-          onClick={() => setActiveFilter('todas')}
-          className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer ${
-            activeFilter === 'todas'
-              ? 'bg-[#007799] text-white shadow-md'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-primary'
-          }`}
-        >
-          Todas as Casas ({housesData.length})
-        </button>
-        {housesData.map((house) => (
-          <button
-            key={house.id}
-            onClick={() => setActiveFilter(house.id)}
-            className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider transition-all duration-300 rounded-sm cursor-pointer ${
-              activeFilter === house.id
-                ? 'bg-[#007799] text-white shadow-md'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-primary'
-            }`}
-          >
-            {house.name}
-          </button>
-        ))}
-      </div>
-
       {/* Houses Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
-        {filteredHouses.map((house, index) => (
+        {housesData.map((house, index) => (
           <motion.div
             key={house.id}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group bg-gray-50 border border-gray-200/80 rounded-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            className="group bg-white border border-gray-200/70 rounded-sm overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
           >
             {/* Image */}
             <div
@@ -189,39 +157,36 @@ export function Projects() {
             >
               <img
                 src={house.mainImage}
-                alt={`Obra ${house.name}`}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={house.name}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <h3 className="text-2xl font-bold text-white font-display">
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <h3 className="text-xl font-medium tracking-wide text-white font-display">
                   {house.name}
                 </h3>
               </div>
             </div>
 
             {/* Obras list inside this House */}
-            <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-6">
               <div>
-                <p className="text-xs text-gray-500 font-light leading-relaxed mb-4">
+                <p className="text-xs text-gray-500 font-light leading-relaxed mb-5">
                   {house.description}
                 </p>
 
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="text-[11px] font-bold text-[#007799] uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <FaHome className="text-accent text-sm" />
-                    Obras desta Casa:
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="text-[11px] font-semibold text-[#007799] uppercase tracking-wider mb-3">
+                    Destaques da Caixilharia:
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2.5">
                     {house.obras.map((obra, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs">
-                        <span className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center flex-shrink-0 mt-0.5 font-bold">
-                          <HiCheck className="text-xs" />
-                        </span>
+                      <li key={i} className="flex items-start gap-2.5 text-xs">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
                         <div>
-                          <strong className="font-bold text-[#007799]">{obra.name}: </strong>
-                          <span className="text-gray-600 font-light">{obra.desc}</span>
+                          <strong className="font-semibold text-gray-800">{obra.name}: </strong>
+                          <span className="text-gray-500 font-light">{obra.desc}</span>
                         </div>
                       </li>
                     ))}
@@ -235,9 +200,9 @@ export function Projects() {
                   setSelectedHouse(house);
                   setActivePhotoIndex(0);
                 }}
-                className="w-full flex items-center justify-center gap-2 bg-white border border-[#007799] text-[#007799] py-3 text-xs uppercase tracking-widest font-bold hover:bg-[#007799] hover:text-white transition-all duration-300 shadow-sm cursor-pointer group/btn"
+                className="w-full flex items-center justify-center gap-2 bg-gray-50 hover:bg-[#007799] text-gray-700 hover:text-white border border-gray-200 py-3 text-xs uppercase tracking-widest font-semibold transition-all duration-300 cursor-pointer group/btn"
               >
-                Explorar Obras desta Casa
+                Ver Detalhes do Projeto
                 <HiArrowRight className="group-hover/btn:translate-x-1 transition-transform" />
               </button>
             </div>
