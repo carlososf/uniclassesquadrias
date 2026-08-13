@@ -96,7 +96,7 @@ export const housesData: HouseProject[] = [
     name: 'Obra Alphaville (VQ)',
     location: 'Alphaville · Barueri / SP',
     description: 'Arquitetura contemporânea com panos de vidro fixo, esquadrias pretas de alto padrão e portas pivotantes de grande escala.',
-    mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-1.webp',
+    mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp',
     obrasCount: 3,
     obras: [
       { name: 'Porta Pivotante Monumental', desc: 'Eixo estrutural com rolamento de alta capacidade.' },

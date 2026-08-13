@@ -26,7 +26,7 @@ export function Contact() {
       `Telefone: ${form.phone}\n\n` +
       `Projeto: ${form.message}`
     );
-    const phone = '5511999999999'; // Substituir pelo número real
+    const phone = '5511934745038'; // Telefone real Uniclass
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     setSubmitted(true);
   };
@@ -188,7 +188,7 @@ export function Contact() {
           >
             {/* WhatsApp Direct */}
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5511934745038"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 p-6 bg-white border border-gray-100 hover:border-accent transition-all duration-300 group shadow-sm hover:shadow-md"
@@ -197,8 +197,9 @@ export function Contact() {
                 <FaWhatsapp className="text-green-500 text-2xl" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">WhatsApp</p>
-                <p className="text-sm text-gray-400 font-light mt-0.5">Resposta rápida · Seg–Sáb 8h–18h</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">WhatsApp Direct</p>
+                <p className="text-sm font-semibold text-gray-800 mt-0.5">(11) 93474-5038</p>
+                <p className="text-xs text-gray-400 font-light mt-0.5">Seg–Qui 7h–17h | Sex 7h–16h</p>
               </div>
               <HiArrowRight className="ml-auto text-gray-300 group-hover:text-accent transition-colors" />
             </a>
@@ -213,18 +214,18 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">E-mail</p>
-                <p className="text-sm text-gray-400 font-light mt-0.5">Para projetos e parcerias</p>
+                <p className="text-sm text-gray-700 font-light mt-0.5">contato@uniclassesquadrias.com.br</p>
               </div>
               <HiArrowRight className="ml-auto text-gray-300 group-hover:text-accent transition-colors" />
             </a>
 
             {/* Info Note */}
             <div className="p-6 bg-primary text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Nossa localização</p>
-              <p className="text-sm font-light leading-relaxed text-white/80">
-                Vila Jovina, Cotia — SP<br />
-                Atendemos toda a Grande São Paulo<br />
-                e interior do estado.
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Nossa Localização & Fábrica</p>
+              <p className="text-sm font-light leading-relaxed text-white/90">
+                R. Norberto, 139 - Vila Jovina<br />
+                Cotia - SP, 06705-170<br />
+                <span className="text-xs text-accent mt-2 block">Atendemos toda a Grande São Paulo e interior.</span>
               </p>
             </div>
           </motion.div>

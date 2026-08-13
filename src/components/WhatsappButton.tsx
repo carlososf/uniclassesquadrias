@@ -2,7 +2,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 export function WhatsappButton() {
-  const phoneNumber = '5511999999999'; // Placeholder number
+  const phoneNumber = '5511934745038'; // Uniclass real number
   const message = encodeURIComponent('Olá! Gostaria de saber mais sobre as esquadrias Uniclass.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
