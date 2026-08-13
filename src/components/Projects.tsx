@@ -23,7 +23,7 @@ export interface HouseProject {
 export const housesData: HouseProject[] = [
   {
     id: 'casa-ca-alpha11',
-    name: 'Casa CA',
+    name: 'Obra Alphaville 11',
     location: 'Alphaville 11 · Barueri / SP',
     description: 'Residência contemporânea de alto padrão com caixilharia de alumínio preta sob medida, vidros laminados e grandes vãos de correr.',
     mainImage: '/gallery/casas/ca-alpha11/ca-alpha11-8.webp',
@@ -37,7 +37,7 @@ export const housesData: HouseProject[] = [
   },
   {
     id: 'casa-kw-alphaville',
-    name: 'Casa KW',
+    name: 'Obra Alphaville (KW)',
     location: 'Alphaville · Barueri / SP',
     description: 'Projeto de arquitetura imponente com esquadrias de alumínio pretas, fachada com pele de vidro e fechamentos panorâmicos.',
     mainImage: '/gallery/casas/kw-alphaville/kw-alphaville-7.webp',
@@ -51,7 +51,7 @@ export const housesData: HouseProject[] = [
   },
   {
     id: 'casa-lc-alphaville',
-    name: 'Casa LC',
+    name: 'Obra Alphaville (LC)',
     location: 'Alphaville · Barueri / SP',
     description: 'Mansão moderna com grandes vãos de correr nivelados ao contrapiso, caixilharia preta e excelente isolamento termoacústico.',
     mainImage: '/gallery/casas/lc-alphaville/lc-alphaville-1.webp',
@@ -65,7 +65,7 @@ export const housesData: HouseProject[] = [
   },
   {
     id: 'casa-ms-altavis',
-    name: 'Casa MS',
+    name: 'Obra Altavis',
     location: 'Altavis · Santana de Parnaíba / SP',
     description: 'Residência de luxo no condomínio Altavis com vidros fixos de grande extensão e estrutura de alumínio sob medida.',
     mainImage: '/gallery/casas/ms-altavis/ms-altavis-1.webp',
@@ -79,7 +79,7 @@ export const housesData: HouseProject[] = [
   },
   {
     id: 'casa-rm-altavis',
-    name: 'Casa RM',
+    name: 'Obra Santana de Parnaíba',
     location: 'Santana de Parnaíba / SP',
     description: 'Projeto residencial executado em Santana de Parnaíba com caixilharia preta, persianas automatizadas e acabamento técnico impecável.',
     mainImage: '/gallery/casas/rm-altavis/rm-altavis-1.webp',
@@ -93,7 +93,7 @@ export const housesData: HouseProject[] = [
   },
   {
     id: 'casa-vq-alphaville',
-    name: 'Casa VQ',
+    name: 'Obra Alphaville (VQ)',
     location: 'Alphaville · Barueri / SP',
     description: 'Arquitetura contemporânea com panos de vidro fixo, esquadrias pretas de alto padrão e portas pivotantes de grande escala.',
     mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-1.webp',
@@ -195,9 +195,6 @@ export function Projects() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               <div className="absolute bottom-4 left-4 right-4 text-white">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-accent font-bold block mb-0.5">
-                  {house.location}
-                </span>
                 <h3 className="text-2xl font-bold text-white font-display">
                   {house.name}
                 </h3>
@@ -270,9 +267,6 @@ export function Projects() {
               {/* Modal Header */}
               <div className="bg-[#007799] text-white p-6 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-accent font-bold block mb-1">
-                    {selectedHouse.location}
-                  </span>
                   <h3 className="text-2xl md:text-3xl font-bold font-display text-white">
                     {selectedHouse.name}
                   </h3>
