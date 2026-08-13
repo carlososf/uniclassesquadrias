@@ -1,6 +1,7 @@
 import { LoadingScreen } from './components/LoadingScreen';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { HeroSlider } from './components/HeroSlider';
 import { Philosophy } from './components/Philosophy';
 import { Collections } from './components/Collections';
 import { Projects } from './components/Projects';
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <HeroSlider />
         <Philosophy />
         <Collections />
         <Projects />
