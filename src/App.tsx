@@ -1,3 +1,4 @@
+import { LoadingScreen } from './components/LoadingScreen';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Philosophy } from './components/Philosophy';
@@ -11,6 +12,7 @@ import { WhatsappButton } from './components/WhatsappButton';
 function App() {
   return (
     <div className="font-sans antialiased bg-white text-primary selection:bg-accent selection:text-white">
+      <LoadingScreen />
       <Header />
       <main>
         <Hero />
