@@ -1,98 +1,169 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const sliderPhotos = [
   {
-    title: 'Fachada Glazing Minimalista · Alphaville 11',
+    title: 'Obra Alphaville 11',
+    subtitle: 'Fachada Glazing Envidraçada & Caixilharia Minimalista Black',
+    location: 'Barueri / SP',
     src: '/gallery/casas/ca-alpha11/ca-alpha11-8.webp',
   },
   {
-    title: 'Pele de Vidro Panorâmica · KW Alphaville',
+    title: 'Obra Alphaville (KW)',
+    subtitle: 'Pele de Vidro Panorâmica com Duplo Pé-Direito',
+    location: 'Barueri / SP',
     src: '/gallery/casas/kw-alphaville/kw-alphaville-7.webp',
   },
   {
-    title: 'Esquadrias Panorâmicas · LC Alphaville',
+    title: 'Obra Alphaville (LC)',
+    subtitle: 'Grandes Vãos de Correr Nivelados com o Contrapiso',
+    location: 'Barueri / SP',
     src: '/gallery/casas/lc-alphaville/lc-alphaville-1.webp',
   },
   {
-    title: 'Vidros Fixos Duplo Pé-Direito · Altavis',
+    title: 'Obra Altavis',
+    subtitle: 'Panos de Vidro Fixo Panorâmicos & Estanqueidade de Vento',
+    location: 'Santana de Parnaíba / SP',
     src: '/gallery/casas/ms-altavis/ms-altavis-1.webp',
   },
   {
-    title: 'Portas de Correr 6 Folhas · Santana de Parnaíba',
+    title: 'Obra Santana de Parnaíba',
+    subtitle: 'Portas Deslizantes de 6 Folhas com Recolhimento Total',
+    location: 'Santana de Parnaíba / SP',
     src: '/gallery/casas/rm-altavis/rm-altavis-1.webp',
   },
   {
-    title: 'Arquitetura Monumental Envidraçada · VQ Alphaville',
+    title: 'Obra Alphaville (VQ)',
+    subtitle: 'Arquitetura Monumental com Vidros de Alta Performance',
+    location: 'Barueri / SP',
     src: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp',
   },
   {
-    title: 'Janelas Integradas Automatizadas · Uniclass',
+    title: 'Janelas Integradas Automatizadas',
+    subtitle: 'Persianas Motorizadas com Recolhimento Embutido',
+    location: 'Cotia / SP',
     src: '/janelas_integradas.png',
   },
   {
-    title: 'Cobertura & Caixilharia Sob Medida',
+    title: 'Engenharia de Esquadrias Sob Medida',
+    subtitle: 'Cobertura, Caixilharia de Segurança & Garantia CREA-SP',
+    location: 'Fábrica Uniclass',
     src: '/cobertura_jardins.png',
   },
 ];
 
-// Duplicate list to achieve seamless infinite loop
-const doublePhotos = [...sliderPhotos, ...sliderPhotos];
-
 export function HeroSlider() {
-  return (
-    <section className="py-12 md:py-16 bg-[#070b10] overflow-hidden relative border-t border-b border-white/10 select-none">
-      {/* Side Shadow Gradients for Luxury Fade Effect */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#070b10] to-transparent z-20" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#070b10] to-transparent z-20" />
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-      {/* Header Badge */}
-      <div className="max-w-7xl mx-auto px-6 mb-8 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-[11px] uppercase tracking-[0.3em] font-semibold text-white/70">
-            Destaques de Obras Executadas
-          </span>
-        </div>
-        <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 hidden sm:inline-block">
-          Arraste ou observe o fluxo contínuo
+  // Auto slide every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % sliderPhotos.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % sliderPhotos.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + sliderPhotos.length) % sliderPhotos.length);
+  };
+
+  const currentPhoto = sliderPhotos[currentIndex];
+
+  return (
+    <section className="relative w-full h-[85vh] min-h-[600px] bg-black overflow-hidden select-none">
+      {/* Photo Slide with Fade In / Fade Out */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+          className="absolute inset-0 w-full h-full"
+        >
+          <img
+            src={currentPhoto.src}
+            alt={currentPhoto.title}
+            className="w-full h-full object-cover"
+          />
+          {/* Subtle Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Top Header Badge */}
+      <div className="absolute top-10 left-8 md:left-16 z-20 flex items-center gap-3">
+        <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
+        <span className="text-xs uppercase tracking-[0.35em] font-semibold text-white/80">
+          Galeria Residencial Uniclass
         </span>
       </div>
 
-      {/* Marquee Track */}
-      <div className="flex overflow-hidden">
-        <motion.div
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{
-            ease: 'linear',
-            duration: 40,
-            repeat: Infinity,
-          }}
-          className="flex gap-6 md:gap-8 flex-shrink-0"
-        >
-          {doublePhotos.map((photo, index) => (
-            <div
-              key={index}
-              className="relative flex-shrink-0 w-[420px] sm:w-[550px] md:w-[700px] h-[260px] sm:h-[340px] md:h-[400px] rounded-lg overflow-hidden group shadow-2xl border border-white/10"
-            >
-              <img
-                src={photo.src}
-                alt={photo.title}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
-              
-              <div className="absolute bottom-5 left-5 right-5 text-white">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold block mb-1">
-                  Uniclass Esquadrias
-                </span>
-                <p className="text-base md:text-lg font-light font-display text-white drop-shadow-md">
-                  {photo.title}
-                </p>
-              </div>
+      {/* Central / Bottom Caption Content */}
+      <div className="absolute bottom-12 md:bottom-20 left-8 md:left-16 right-8 md:right-32 z-20 max-w-4xl text-white">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="space-y-3"
+          >
+            <div className="inline-block px-3.5 py-1 bg-accent/90 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-[0.25em] mb-1">
+              {currentPhoto.location}
             </div>
+
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-light font-display leading-tight text-white">
+              {currentPhoto.title}
+            </h2>
+
+            <p className="text-base sm:text-lg text-white/80 font-light max-w-2xl leading-relaxed">
+              {currentPhoto.subtitle}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={handlePrev}
+        aria-label="Foto anterior"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-black/40 hover:bg-accent text-white border border-white/20 hover:border-accent transition-all duration-300 backdrop-blur-md cursor-pointer group"
+      >
+        <HiChevronLeft className="text-2xl md:text-3xl group-hover:-translate-x-0.5 transition-transform" />
+      </button>
+
+      <button
+        onClick={handleNext}
+        aria-label="Próxima foto"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-4 rounded-full bg-black/40 hover:bg-accent text-white border border-white/20 hover:border-accent transition-all duration-300 backdrop-blur-md cursor-pointer group"
+      >
+        <HiChevronRight className="text-2xl md:text-3xl group-hover:translate-x-0.5 transition-transform" />
+      </button>
+
+      {/* Slide Indicators / Line Progress */}
+      <div className="absolute bottom-8 right-8 md:right-16 z-30 flex items-center gap-3">
+        <span className="text-xs font-mono text-white/70 font-semibold">
+          {String(currentIndex + 1).padStart(2, '0')} / {String(sliderPhotos.length).padStart(2, '0')}
+        </span>
+        <div className="flex gap-2">
+          {sliderPhotos.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-1 transition-all duration-500 rounded-full cursor-pointer ${
+                currentIndex === idx ? 'w-8 bg-accent' : 'w-3 bg-white/30 hover:bg-white/60'
+              }`}
+            />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
