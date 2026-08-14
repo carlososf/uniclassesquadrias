@@ -228,7 +228,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
               className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-200/80"
             >
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#007799] mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#55c5d0] mb-3">
                   Sobre esta Coleção
                 </h3>
                 <p className="text-sm text-gray-600 font-light leading-relaxed">
@@ -237,7 +237,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
               </div>
 
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#007799] mb-3">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#55c5d0] mb-3">
                   Diferenciais Técnicos
                 </h3>
                 <ul className="space-y-2 text-sm text-gray-600 font-light">

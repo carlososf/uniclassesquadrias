@@ -52,8 +52,6 @@ export function HeroSlider() {
             alt={currentPhoto.alt}
             className="w-full h-full object-cover"
           />
-          {/* Subtle Vignette Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
         </motion.div>
       </AnimatePresence>
 

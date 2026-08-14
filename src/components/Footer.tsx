@@ -16,13 +16,13 @@ export function Footer() {
             Esquadrias de alumínio de alto padrão para projetos que exigem excelência, design e alta performance.
           </p>
           <div className="flex space-x-3">
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#007799] hover:text-white hover:border-[#007799] transition-all duration-300">
+            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300">
               <FaInstagram />
             </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#007799] hover:text-white hover:border-[#007799] transition-all duration-300">
+            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300">
               <FaFacebookF />
             </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#007799] hover:text-white hover:border-[#007799] transition-all duration-300">
+            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300">
               <FaLinkedinIn />
             </a>
           </div>
@@ -30,25 +30,25 @@ export function Footer() {
 
         {/* Contact Info */}
         <div className="md:col-span-3">
-          <h3 className="font-bold text-[#007799] mb-4 uppercase tracking-wider text-xs">Contato</h3>
+          <h3 className="font-bold text-[#55c5d0] mb-4 uppercase tracking-wider text-xs">Contato</h3>
           <p className="mb-2 text-gray-700 leading-relaxed font-normal">
             R. Norberto, 139 - Vila Jovina<br />
             Cotia - SP, 06705-170
           </p>
           <p className="mb-3 text-gray-600">contato@uniclassesquadrias.com.br</p>
           <a
-            href="https://wa.me/5511934745038"
+            href="https://wa.me/5511972362554"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mb-2 font-bold text-[#007799] hover:text-accent text-base transition-colors"
+            className="inline-block mb-2 font-bold text-[#55c5d0] hover:text-accent text-base transition-colors"
           >
-            (11) 93474-5038
+            (11) 97236-2554
           </a>
         </div>
 
         {/* Horário de Funcionamento */}
         <div className="md:col-span-3">
-          <h3 className="font-bold text-[#007799] mb-4 uppercase tracking-wider text-xs">Horário de Funcionamento</h3>
+          <h3 className="font-bold text-[#55c5d0] mb-4 uppercase tracking-wider text-xs">Horário de Funcionamento</h3>
           <ul className="space-y-1.5 text-xs text-gray-600 font-normal">
             <li className="flex justify-between border-b border-gray-100 pb-1">
               <span>Segunda a Quinta:</span>
@@ -71,14 +71,14 @@ export function Footer() {
 
         {/* Info Column & CREA */}
         <div className="md:col-span-2">
-          <h3 className="font-bold text-[#007799] mb-4 uppercase tracking-wider text-xs">Registro Técnico</h3>
+          <h3 className="font-bold text-[#55c5d0] mb-4 uppercase tracking-wider text-xs">Registro Técnico</h3>
           <p className="mb-1 text-xs text-gray-500">CNPJ: 30.752.817/0001-87</p>
-          <p className="mb-4 font-bold tracking-tighter text-[#007799] text-xs">UNICLASS ESQUADRIAS</p>
+          <p className="mb-4 font-bold tracking-tighter text-[#55c5d0] text-xs">UNICLASS ESQUADRIAS</p>
           
           <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
             <img src="/crea-sp.png" alt="CREA-SP Logo" className="h-10 object-contain" />
             <div>
-              <p className="text-[11px] font-bold text-[#007799] uppercase">Empresa Registrada</p>
+              <p className="text-[11px] font-bold text-[#55c5d0] uppercase">Empresa Registrada</p>
               <p className="text-[10px] text-gray-400">CREA-SP Nº 30.752.817/0001-87</p>
             </div>
           </div>
@@ -87,7 +87,7 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] uppercase tracking-[0.2em] text-gray-400">
         <p className="hover:text-primary transition-colors cursor-default">
-          DESENVOLVIDO POR <span className="font-bold text-[#007799]">UEBI STUDIO</span>
+          DESENVOLVIDO POR <span className="font-bold text-[#55c5d0]">UEBI STUDIO</span>
         </p>
         <p>&copy; {new Date().getFullYear()} Uniclass. Todos os direitos reservados.</p>
       </div>

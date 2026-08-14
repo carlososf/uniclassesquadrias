@@ -120,7 +120,7 @@ export function Projects() {
             Portfólio de Residências
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-primary font-display">
-            Obras em <strong className="font-bold text-[#007799]">Destaque</strong>
+            Obras em <strong className="font-bold text-[#55c5d0]">Destaque</strong>
           </h2>
           <p className="text-gray-500 font-light mt-3 text-sm max-w-xl leading-relaxed">
             Estes são apenas alguns de nossos projetos residenciais de alto padrão executados com esquadrias de alumínio sob medida.
@@ -130,7 +130,7 @@ export function Projects() {
 
         <button
           onClick={() => setSelectedCategory('projetos')}
-          className="hidden md:inline-flex items-center gap-2 border-b border-[#007799] pb-1 text-[#007799] hover:text-accent hover:border-accent font-bold text-xs uppercase tracking-widest transition-colors duration-300 cursor-pointer"
+          className="hidden md:inline-flex items-center gap-2 border-b border-[#55c5d0] pb-1 text-[#55c5d0] hover:text-accent hover:border-accent font-bold text-xs uppercase tracking-widest transition-colors duration-300 cursor-pointer"
         >
           Ver Galeria Completa de Obras →
         </button>
@@ -177,7 +177,7 @@ export function Projects() {
                 </p>
 
                 <div className="border-t border-gray-100 pt-4">
-                  <p className="text-[11px] font-semibold text-[#007799] uppercase tracking-wider mb-3">
+                  <p className="text-[11px] font-semibold text-[#55c5d0] uppercase tracking-wider mb-3">
                     Destaques da Caixilharia:
                   </p>
                   <ul className="space-y-2.5">
@@ -200,7 +200,7 @@ export function Projects() {
                   setSelectedHouse(house);
                   setActivePhotoIndex(0);
                 }}
-                className="w-full flex items-center justify-center gap-2 bg-gray-50 hover:bg-[#007799] text-gray-700 hover:text-white border border-gray-200 py-3 text-xs uppercase tracking-widest font-semibold transition-all duration-300 cursor-pointer group/btn"
+                className="w-full flex items-center justify-center gap-2 bg-gray-50 hover:bg-[#55c5d0] text-gray-700 hover:text-white border border-gray-200 py-3 text-xs uppercase tracking-widest font-semibold transition-all duration-300 cursor-pointer group/btn"
               >
                 Ver Detalhes do Projeto
                 <HiArrowRight className="group-hover/btn:translate-x-1 transition-transform" />
@@ -213,7 +213,7 @@ export function Projects() {
       <div className="mt-12 text-center md:hidden">
         <button
           onClick={() => setSelectedCategory('projetos')}
-          className="inline-block border-b border-[#007799] pb-1 text-[#007799] hover:text-accent hover:border-accent text-xs uppercase tracking-widest font-bold transition-colors duration-300"
+          className="inline-block border-b border-[#55c5d0] pb-1 text-[#55c5d0] hover:text-accent hover:border-accent text-xs uppercase tracking-widest font-bold transition-colors duration-300"
         >
           Ver Galeria Completa de Obras →
         </button>
@@ -230,7 +230,7 @@ export function Projects() {
           >
             <div className="bg-white w-full max-w-5xl rounded-sm shadow-2xl overflow-hidden my-auto border border-gray-200 max-h-[90vh] flex flex-col">
               {/* Modal Header */}
-              <div className="bg-[#007799] text-white p-6 flex items-center justify-between">
+              <div className="bg-[#55c5d0] text-white p-6 flex items-center justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold font-display text-white">
                     {selectedHouse.name}
@@ -245,7 +245,7 @@ export function Projects() {
               </div>
 
               {/* Modal Body */}
-              <div className="p-6 md:p-8 overflow-y-auto space-y-8 flex-1">
+              <div className="p-6 md:p-8 overflow-y-auto space-y-6 flex-1">
                 {/* Photo Viewer */}
                 <div>
                   <div className="relative aspect-[16/9] bg-black rounded-sm overflow-hidden mb-3">
@@ -293,58 +293,22 @@ export function Projects() {
                   </div>
                 </div>
 
-                {/* Details & Obras */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 border-t border-gray-200">
+                {/* CTA Button Only */}
+                <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-between items-center bg-gray-50 p-6 border border-gray-200 rounded-sm">
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-[#007799] mb-3">
-                      Sobre a Residência
-                    </h4>
-                    <p className="text-sm text-gray-600 font-light leading-relaxed mb-4">
-                      {selectedHouse.description}
-                    </p>
-                    <div className="bg-gray-50 p-4 border-l-4 border-accent">
-                      <p className="text-xs text-gray-500 font-light">
-                        Projetos executados sob medida pela <strong className="font-bold text-[#007799]">Uniclass Esquadrias</strong> com controle de qualidade e engenharia certificada.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-[#007799] mb-3">
-                      Esquadrias Executadas na Casa ({selectedHouse.obras.length})
-                    </h4>
-                    <div className="space-y-3">
-                      {selectedHouse.obras.map((obra, idx) => (
-                        <div key={idx} className="p-3 bg-gray-50 border border-gray-200/80 rounded-sm">
-                          <p className="text-xs font-bold text-[#007799] flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-accent" />
-                            {obra.name}
-                          </p>
-                          <p className="text-xs text-gray-500 font-light mt-1 pl-4">
-                            {obra.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-between items-center bg-gray-50 p-6 border border-gray-200">
-                  <div>
-                    <p className="text-xs font-bold text-[#007799] uppercase tracking-wider">
+                    <p className="text-xs font-bold text-[#55c5d0] uppercase tracking-wider">
                       Deseja um projeto semelhante para sua obra?
                     </p>
-                    <p className="text-xs text-gray-500 font-light">
+                    <p className="text-xs text-gray-500 font-light mt-0.5">
                       Fale diretamente com nossa equipe técnica via WhatsApp.
                     </p>
                   </div>
                   <a
                     href="#contact"
                     onClick={() => setSelectedHouse(null)}
-                    className="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-accent/90 transition-all shadow-md"
+                    className="inline-flex items-center gap-2 bg-accent text-white px-8 py-3.5 text-xs uppercase tracking-widest font-bold hover:bg-accent/90 transition-all shadow-md rounded-sm"
                   >
-                    <FaWhatsapp className="text-sm" />
+                    <FaWhatsapp className="text-base" />
                     Solicitar Orçamento
                   </a>
                 </div>

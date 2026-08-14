@@ -45,7 +45,7 @@ export function LoadingScreen() {
           className="fixed inset-0 z-[99999] bg-[#070707] flex flex-col items-center justify-center px-6 select-none font-sans"
         >
           {/* Subtle Ambient Glow */}
-          <div className="absolute w-[350px] h-[350px] bg-[#007799]/15 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute w-[350px] h-[350px] bg-[#55c5d0]/15 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center text-center max-w-md">
             {/* Logo */}
@@ -55,7 +55,7 @@ export function LoadingScreen() {
               initial={{ opacity: 0, scale: 0.85, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.9, ease: 'easeOut' }}
-              className="h-20 sm:h-24 md:h-28 object-contain mb-8 filter drop-shadow-[0_10px_25px_rgba(0,119,153,0.3)]"
+              className="h-20 sm:h-24 md:h-28 object-contain mb-8 filter drop-shadow-[0_10px_25px_rgba(85,197,208,0.3)]"
             />
 
             {/* Glowing Accent Line */}
@@ -84,7 +84,7 @@ export function LoadingScreen() {
               className="w-48 sm:w-56 h-[3px] bg-white/10 rounded-full overflow-hidden relative mb-3"
             >
               <div
-                className="h-full bg-gradient-to-r from-[#007799] to-accent transition-all duration-75 ease-out rounded-full shadow-[0_0_12px_#007799]"
+                className="h-full bg-gradient-to-r from-[#55c5d0] to-accent transition-all duration-75 ease-out rounded-full shadow-[0_0_12px_#55c5d0]"
                 style={{ width: `${progress}%` }}
               />
             </motion.div>

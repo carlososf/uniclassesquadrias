@@ -75,9 +75,10 @@ export function Header() {
             </a>
           ))}
           <a
-            href="/portifoliouniclass.pdf"
+            href="/uniclass%20portifiolio%20att.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            download="uniclass portifiolio att.pdf"
             className="flex items-center gap-2 border border-white/30 text-white px-3.5 py-2 text-xs uppercase tracking-[0.15em] hover:bg-white/15 hover:border-white transition-all duration-300 rounded-sm font-medium"
             title="Abrir Portfólio Uniclass PDF"
           >
@@ -121,9 +122,10 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/portifoliouniclass.pdf"
+              href="/uniclass%20portifiolio%20att.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              download="uniclass portifiolio att.pdf"
               className="flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all duration-300 rounded-sm"
               onClick={() => setMobileMenuOpen(false)}
             >

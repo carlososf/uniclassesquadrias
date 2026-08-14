@@ -30,11 +30,11 @@ export function Contact() {
       `Projeto: ${form.message}`;
 
     if (pdfFile) {
-      textMsg += `\n\n📄 Projeto Anexo: ${pdfFile.name} (enviando arquivo via WhatsApp)`;
+      textMsg += `\n\n📄 [Arquivo Anexo: ${pdfFile.name}]\nEstou enviando o arquivo PDF em anexo nesta conversa do WhatsApp!`;
     }
 
     const text = encodeURIComponent(textMsg);
-    const phone = '5511934745038'; // Telefone real Uniclass
+    const phone = '5511972362554'; // Telefone Uniclass
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     setSubmitted(true);
   };
@@ -80,7 +80,7 @@ export function Contact() {
                   <FaWhatsapp className="text-accent text-3xl" />
                 </div>
                 <h3 className="text-xl font-medium text-primary">Redirecionando para o WhatsApp!</h3>
-                <p className="text-gray-400 font-light text-sm">Seu orçamento foi preparado. Continue a conversa pelo WhatsApp.</p>
+                <p className="text-gray-400 font-light text-sm">Seu orçamento foi preparado. Continue a conversa pelo WhatsApp e anexe seu PDF.</p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="text-xs uppercase tracking-widest text-accent border-b border-accent pb-0.5 hover:opacity-70 transition-opacity mt-4"
@@ -193,6 +193,13 @@ export function Contact() {
                   </div>
                 </div>
 
+                {/* PDF Note */}
+                {pdfFile && (
+                  <p className="text-[11px] text-[#55c5d0] font-medium bg-cyan-50 p-2.5 border border-cyan-100 rounded-sm">
+                    📄 Arquivo selecionado: <strong>{pdfFile.name}</strong>. O nome do arquivo será enviado na mensagem e você poderá anexar o PDF diretamente na janela do WhatsApp.
+                  </p>
+                )}
+
                 {/* Message */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">
@@ -235,24 +242,25 @@ export function Contact() {
           >
             {/* Portfolio Button Box */}
             <a
-              href="/portifoliouniclass.pdf"
+              href="/uniclass%20portifiolio%20att.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-5 bg-gradient-to-r from-[#007799] to-[#55c5d0] text-white shadow-md hover:shadow-xl transition-all duration-300 group rounded-sm"
+              download="uniclass portifiolio att.pdf"
+              className="flex items-center gap-4 p-5 bg-gradient-to-r from-[#55c5d0] to-[#00BFA5] text-white shadow-md hover:shadow-xl transition-all duration-300 group rounded-sm"
             >
               <div className="w-11 h-11 bg-white/20 rounded flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
                 <FaFilePdf className="text-white text-xl group-hover:scale-110 transition-transform" />
               </div>
               <div className="flex-1">
                 <p className="text-xs uppercase tracking-wider font-bold">Portfólio Uniclass PDF</p>
-                <p className="text-[11px] text-white/90 font-light mt-0.5">Baixe nosso catálogo completo com projetos executados</p>
+                <p className="text-[11px] text-white/90 font-light mt-0.5">Baixe nosso catálogo completo (uniclass portifiolio att.pdf)</p>
               </div>
               <HiArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
             </a>
 
             {/* WhatsApp Direct */}
             <a
-              href="https://wa.me/5511934745038"
+              href="https://wa.me/5511972362554"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 p-6 bg-white border border-gray-100 hover:border-accent transition-all duration-300 group shadow-sm hover:shadow-md"
@@ -261,8 +269,8 @@ export function Contact() {
                 <FaWhatsapp className="text-green-500 text-2xl" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">WhatsApp Direct</p>
-                <p className="text-sm font-semibold text-gray-800 mt-0.5">(11) 93474-5038</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#55c5d0] group-hover:text-accent transition-colors">WhatsApp Direct</p>
+                <p className="text-sm font-semibold text-gray-800 mt-0.5">(11) 97236-2554</p>
                 <p className="text-xs text-gray-400 font-light mt-0.5">Seg–Qui 7h–17h | Sex 7h–16h</p>
               </div>
               <HiArrowRight className="ml-auto text-gray-300 group-hover:text-accent transition-colors" />
@@ -277,7 +285,7 @@ export function Contact() {
                 <FaEnvelope className="text-accent text-xl" />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#007799] group-hover:text-accent transition-colors">E-mail</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#55c5d0] group-hover:text-accent transition-colors">E-mail</p>
                 <p className="text-sm text-gray-700 font-light mt-0.5">contato@uniclassesquadrias.com.br</p>
               </div>
               <HiArrowRight className="ml-auto text-gray-300 group-hover:text-accent transition-colors" />

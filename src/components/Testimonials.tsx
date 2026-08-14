@@ -140,7 +140,7 @@ export function Testimonials() {
                   {t.avatar}
                 </div>
                 <div>
-                  <p className={`text-xs font-bold ${active === i ? 'text-[#007799]' : 'text-white'}`}>{t.name}</p>
+                  <p className={`text-xs font-bold ${active === i ? 'text-[#55c5d0]' : 'text-white'}`}>{t.name}</p>
                   <p className={`text-[10px] mt-0.5 ${active === i ? 'text-gray-400' : 'text-white/40'}`}>
                     {t.date}
                   </p>
