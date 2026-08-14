@@ -6,7 +6,6 @@ import { FaFilePdf } from 'react-icons/fa';
 
 const navLinks = [
   { name: 'Sobre Nós', href: '#about' },
-  { name: 'Coleções', href: '#collections' },
   { name: 'Obras', href: '#projects' },
   { name: 'Orçamento', href: '#contact' },
 ];
@@ -68,10 +67,10 @@ export function Header() {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs uppercase tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300 relative group"
+              className="text-xs uppercase tracking-[0.2em] text-[#55c5d0] hover:text-white font-semibold transition-colors duration-300 relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#55c5d0] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
@@ -79,7 +78,7 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             download="uniclass portifiolio att.pdf"
-            className="flex items-center gap-2 border border-white/30 text-white px-3.5 py-2 text-xs uppercase tracking-[0.15em] hover:bg-white/15 hover:border-white transition-all duration-300 rounded-sm font-medium"
+            className="flex items-center gap-2 border border-[#55c5d0]/50 text-[#55c5d0] px-3.5 py-2 text-xs uppercase tracking-[0.15em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 rounded-sm font-semibold"
             title="Abrir Portfólio Uniclass PDF"
           >
             <FaFilePdf className="text-red-400 text-sm" />
@@ -87,7 +86,7 @@ export function Header() {
           </a>
           <a
             href="#contact"
-            className="border border-accent text-accent px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 rounded-sm font-medium"
+            className="border border-accent text-accent px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 rounded-sm font-semibold"
           >
             Solicitar Orçamento
           </a>
@@ -115,7 +114,7 @@ export function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-light text-white/80 hover:text-white block border-b border-white/10 pb-3"
+                className="text-base font-medium text-[#55c5d0] hover:text-white block border-b border-white/10 pb-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
@@ -126,7 +125,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               download="uniclass portifiolio att.pdf"
-              className="flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all duration-300 rounded-sm"
+              className="flex items-center justify-center gap-2 border border-[#55c5d0]/50 text-[#55c5d0] px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 rounded-sm font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
               <FaFilePdf className="text-red-400 text-base" />
@@ -134,7 +133,7 @@ export function Header() {
             </a>
             <a
               href="#contact"
-              className="block text-center border border-accent text-accent px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300"
+              className="block text-center border border-accent text-accent px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solicitar Orçamento

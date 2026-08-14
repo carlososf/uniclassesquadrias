@@ -107,10 +107,62 @@ export const housesData: HouseProject[] = [
   },
 ];
 
+export const mosaicPhotos = [
+  {
+    src: '/gallery/casas/ca-alpha11/ca-alpha11-8.webp',
+    title: 'Caixilharia Minimalista & Glazing',
+    category: 'Barueri / SP',
+    className: 'col-span-2 row-span-2',
+  },
+  {
+    src: '/gallery/casas/kw-alphaville/kw-alphaville-7.webp',
+    title: 'Pele de Vidro Panorâmica',
+    category: 'Alphaville (KW)',
+    className: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/gallery/casas/lc-alphaville/lc-alphaville-1.webp',
+    title: 'Vãos Nivelados ao Piso',
+    category: 'Barueri (LC)',
+    className: 'col-span-1 row-span-2',
+  },
+  {
+    src: '/gallery/casas/ms-altavis/ms-altavis-1.webp',
+    title: 'Panos de Vidro Fixo Panorâmicos',
+    category: 'Altavis / SP',
+    className: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/gallery/casas/rm-altavis/rm-altavis-1.webp',
+    title: 'Portas Deslizantes de 6 Folhas',
+    category: 'Santana de Parnaíba',
+    className: 'col-span-2 row-span-1',
+  },
+  {
+    src: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp',
+    title: 'Porta Pivotante Monumental',
+    category: 'Alphaville (VQ)',
+    className: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/janelas_integradas.png',
+    title: 'Janelas Integradas Motorizadas',
+    category: 'Tecnologia Uniclass',
+    className: 'col-span-1 row-span-1',
+  },
+  {
+    src: '/projeto-principal.png',
+    title: 'Engenharia de Esquadrias Sob Medida',
+    category: 'Produção Própria',
+    className: 'col-span-2 row-span-1',
+  },
+];
+
 export function Projects() {
   const [selectedHouse, setSelectedHouse] = useState<HouseProject | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
+  const [mosaicIndex, setMosaicIndex] = useState<number | null>(null);
 
   return (
     <section className="py-24 bg-gray-50/50" id="projects">
@@ -218,6 +270,102 @@ export function Projects() {
           Ver Galeria Completa de Obras →
         </button>
       </div>
+
+      {/* Interactive Photo Mosaic Gallery */}
+      <div className="max-w-7xl mx-auto px-6 mt-24">
+        <div className="text-center mb-10">
+          <p className="text-xs uppercase tracking-[0.35em] text-accent font-bold mb-2">
+            Mosaico de Detalhes
+          </p>
+          <h3 className="text-3xl md:text-4xl font-light text-primary font-display">
+            Galeria Interativa de <strong className="font-bold text-[#55c5d0]">Projetos & Esquadrias</strong>
+          </h3>
+          <p className="text-gray-500 font-light mt-2 text-sm max-w-xl mx-auto leading-relaxed">
+            Clique em qualquer imagem do mosaico para abrir em tela cheia e explorar os detalhes técnicos da caixilharia Uniclass.
+          </p>
+          <div className="w-12 h-1 bg-[#55c5d0] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        {/* Mosaic Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[220px]">
+          {mosaicPhotos.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              onClick={() => setMosaicIndex(idx)}
+              className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-md border border-gray-200/60 ${item.className}`}
+            >
+              <img
+                src={item.src}
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-white">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-[#55c5d0] mb-1">
+                  {item.category}
+                </span>
+                <p className="text-sm font-semibold leading-tight text-white font-display">
+                  {item.title}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox for Mosaic */}
+      <AnimatePresence>
+        {mosaicIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 select-none"
+          >
+            <button
+              onClick={() => setMosaicIndex(null)}
+              className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-accent text-white transition-colors cursor-pointer z-50"
+            >
+              <HiX className="text-2xl" />
+            </button>
+
+            <button
+              onClick={() =>
+                setMosaicIndex((mosaicIndex - 1 + mosaicPhotos.length) % mosaicPhotos.length)
+              }
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/10 hover:bg-accent text-white transition-colors cursor-pointer z-50"
+            >
+              <HiChevronLeft className="text-3xl" />
+            </button>
+
+            <button
+              onClick={() => setMosaicIndex((mosaicIndex + 1) % mosaicPhotos.length)}
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/10 hover:bg-accent text-white transition-colors cursor-pointer z-50"
+            >
+              <HiChevronRight className="text-3xl" />
+            </button>
+
+            <div className="max-w-5xl max-h-[85vh] relative flex flex-col items-center justify-center">
+              <img
+                src={mosaicPhotos[mosaicIndex].src}
+                alt={mosaicPhotos[mosaicIndex].title}
+                className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl"
+              />
+              <div className="mt-4 text-center text-white space-y-1">
+                <span className="text-xs uppercase font-bold tracking-widest text-[#55c5d0]">
+                  {mosaicPhotos[mosaicIndex].category}
+                </span>
+                <h4 className="text-xl font-medium font-display">
+                  {mosaicPhotos[mosaicIndex].title}
+                </h4>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* House Modal View */}
       <AnimatePresence>
