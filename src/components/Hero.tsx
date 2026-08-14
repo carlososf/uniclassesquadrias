@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { FaFilePdf } from 'react-icons/fa';
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -123,17 +124,26 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row flex-wrap gap-4"
         >
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-medium px-8 py-4 uppercase tracking-widest text-xs hover:bg-accent/90 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-accent/30"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-medium px-8 py-4 uppercase tracking-widest text-xs hover:bg-accent/90 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-accent/30 rounded-sm"
           >
             Solicitar Orçamento
           </a>
           <a
+            href="/portifoliouniclass.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium px-7 py-4 uppercase tracking-widest text-xs hover:border-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 shadow-lg rounded-sm"
+          >
+            <FaFilePdf className="text-red-400 text-base" />
+            Portfólio (PDF)
+          </a>
+          <a
             href="#about"
-            className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-light px-8 py-4 uppercase tracking-widest text-xs hover:border-white hover:bg-white/10 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-white/30 text-white/80 font-light px-6 py-4 uppercase tracking-widest text-xs hover:border-white hover:text-white transition-all duration-300 rounded-sm"
           >
             Sobre Nós
           </a>

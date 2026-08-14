@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaFilePdf } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi';
 
 export function Contact() {
@@ -9,8 +9,10 @@ export function Contact() {
     lastName: '',
     phone: '',
     city: '',
+    bairro: '',
     message: '',
   });
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -20,12 +22,18 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const text = encodeURIComponent(
+    let textMsg =
       `Olá! Me chamo ${form.firstName} ${form.lastName}.\n` +
       `Cidade: ${form.city}\n` +
+      `Bairro: ${form.bairro || 'Não informado'}\n` +
       `Telefone: ${form.phone}\n\n` +
-      `Projeto: ${form.message}`
-    );
+      `Projeto: ${form.message}`;
+
+    if (pdfFile) {
+      textMsg += `\n\n📄 Projeto Anexo: ${pdfFile.name} (enviando arquivo via WhatsApp)`;
+    }
+
+    const text = encodeURIComponent(textMsg);
     const phone = '5511934745038'; // Telefone real Uniclass
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     setSubmitted(true);
@@ -146,6 +154,45 @@ export function Contact() {
                   </div>
                 </div>
 
+                {/* Bairro + PDF Attachment Row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">
+                      Bairro
+                    </label>
+                    <input
+                      type="text"
+                      name="bairro"
+                      value={form.bairro}
+                      onChange={handleChange}
+                      placeholder="Seu bairro"
+                      className="border border-gray-200 px-4 py-3 text-sm font-light text-primary placeholder-gray-300 focus:outline-none focus:border-accent transition-colors duration-200 bg-gray-50/50"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium flex items-center justify-between">
+                      <span>Anexar PDF</span>
+                      <span className="text-[9px] text-gray-400 font-normal lowercase">(projeto/planta)</span>
+                    </label>
+                    <label className="border border-dashed border-gray-300 bg-gray-50/50 hover:bg-white hover:border-accent px-4 py-2.5 flex items-center gap-3 cursor-pointer transition-all duration-200 group rounded-sm">
+                      <FaFilePdf className="text-red-500 text-lg flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="text-xs text-gray-600 font-light truncate">
+                        {pdfFile ? pdfFile.name : 'Selecionar arquivo .pdf'}
+                      </span>
+                      <input
+                        type="file"
+                        accept=".pdf"
+                        className="hidden"
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files[0]) {
+                            setPdfFile(e.target.files[0]);
+                          }
+                        }}
+                      />
+                    </label>
+                  </div>
+                </div>
+
                 {/* Message */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">
@@ -156,7 +203,7 @@ export function Contact() {
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    rows={5}
+                    rows={4}
                     placeholder="Descreva todo o seu projeto com medidas"
                     className="border border-gray-200 px-4 py-3 text-sm font-light text-primary placeholder-gray-300 focus:outline-none focus:border-accent transition-colors duration-200 bg-gray-50/50 resize-none"
                   />
@@ -186,6 +233,23 @@ export function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-2 space-y-5"
           >
+            {/* Portfolio Button Box */}
+            <a
+              href="/portifoliouniclass.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-5 bg-gradient-to-r from-[#007799] to-[#55c5d0] text-white shadow-md hover:shadow-xl transition-all duration-300 group rounded-sm"
+            >
+              <div className="w-11 h-11 bg-white/20 rounded flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                <FaFilePdf className="text-white text-xl group-hover:scale-110 transition-transform" />
+              </div>
+              <div className="flex-1">
+                <p className="text-xs uppercase tracking-wider font-bold">Portfólio Uniclass PDF</p>
+                <p className="text-[11px] text-white/90 font-light mt-0.5">Baixe nosso catálogo completo com projetos executados</p>
+              </div>
+              <HiArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
+            </a>
+
             {/* WhatsApp Direct */}
             <a
               href="https://wa.me/5511934745038"

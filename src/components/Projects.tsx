@@ -120,7 +120,7 @@ export function Projects() {
             Portfólio de Residências
           </p>
           <h2 className="text-4xl md:text-5xl font-light text-primary font-display">
-            Nossas <strong className="font-bold text-[#007799]">Obras</strong>
+            Obras em <strong className="font-bold text-[#007799]">Destaque</strong>
           </h2>
           <p className="text-gray-500 font-light mt-3 text-sm max-w-xl leading-relaxed">
             Estes são apenas alguns de nossos projetos residenciais de alto padrão executados com esquadrias de alumínio sob medida.

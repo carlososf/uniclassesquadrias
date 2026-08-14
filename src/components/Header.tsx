@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils/cn';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { FaFilePdf } from 'react-icons/fa';
 
 const navLinks = [
   { name: 'Sobre Nós', href: '#about' },
@@ -45,22 +46,24 @@ export function Header() {
             />
           </a>
           <div className="hidden sm:flex items-center gap-2.5 pl-6 border-l border-white/15">
-            <img
-              src="/crea-sp.png"
-              alt="CREA-SP Registro Técnico"
-              className={cn(
-                'object-contain transition-all duration-500 brightness-0 invert opacity-80 hover:opacity-100',
-                isScrolled ? 'h-7' : 'h-8'
-              )}
-            />
-            <span className="text-[10px] uppercase tracking-wider text-white/50 leading-tight hidden lg:inline-block">
+            <div className="bg-white/95 px-2.5 py-1 rounded shadow-sm flex items-center gap-2 border border-white/20">
+              <img
+                src="/crea-sp.png"
+                alt="CREA-SP Registro Técnico"
+                className={cn(
+                  'object-contain transition-all duration-500',
+                  isScrolled ? 'h-6' : 'h-7'
+                )}
+              />
+            </div>
+            <span className="text-[10px] uppercase tracking-wider text-white/80 leading-tight hidden lg:inline-block font-medium">
               Empresa<br />Registrada CREA-SP
             </span>
           </div>
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -72,8 +75,18 @@ export function Header() {
             </a>
           ))}
           <a
+            href="/portifoliouniclass.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 border border-white/30 text-white px-3.5 py-2 text-xs uppercase tracking-[0.15em] hover:bg-white/15 hover:border-white transition-all duration-300 rounded-sm font-medium"
+            title="Abrir Portfólio Uniclass PDF"
+          >
+            <FaFilePdf className="text-red-400 text-sm" />
+            Portfólio PDF
+          </a>
+          <a
             href="#contact"
-            className="border border-accent text-accent px-6 py-2.5 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300"
+            className="border border-accent text-accent px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 rounded-sm font-medium"
           >
             Solicitar Orçamento
           </a>
@@ -95,21 +108,31 @@ export function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-primary border-t border-white/10 shadow-2xl p-6 md:hidden flex flex-col space-y-5"
+            className="absolute top-full left-0 right-0 bg-primary border-t border-white/10 shadow-2xl p-6 md:hidden flex flex-col space-y-4"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-light text-white/80 hover:text-white block border-b border-white/10 pb-4"
+                className="text-base font-light text-white/80 hover:text-white block border-b border-white/10 pb-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </a>
             ))}
             <a
+              href="/portifoliouniclass.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-white/10 transition-all duration-300 rounded-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <FaFilePdf className="text-red-400 text-base" />
+              Ver Portfólio PDF
+            </a>
+            <a
               href="#contact"
-              className="block text-center border border-accent text-accent px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 mt-2"
+              className="block text-center border border-accent text-accent px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solicitar Orçamento
