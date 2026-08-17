@@ -150,8 +150,14 @@ export function Projects() {
   }, [fullImageIndex, selectedHouse]);
 
   return (
-    <section className="py-24 bg-black text-white" id="projects">
-      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+    <section className="py-24 bg-black text-white relative overflow-hidden" id="projects">
+      {/* Dual vertical accent lines on the left margin (1 blue #55c5d0, 1 white) */}
+      <div className="absolute left-3 md:left-8 top-0 bottom-0 flex gap-2 pointer-events-none z-20">
+        <div className="w-[3px] h-full bg-[#55c5d0]" />
+        <div className="w-[3px] h-full bg-white" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 pl-10 md:pl-20 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-[#55c5d0] font-bold mb-2">
             Portfólio de Residências
@@ -174,7 +180,7 @@ export function Projects() {
       </div>
 
       {/* Houses Photo Grid — Dynamic multi-format mosaic grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 grid-flow-dense auto-rows-[225px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 pl-10 md:pl-20 grid-flow-dense auto-rows-[225px]">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
