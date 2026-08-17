@@ -60,19 +60,19 @@ export function Testimonials() {
 
   return (
     <section className="pt-12 sm:pt-16 pb-24 bg-primary relative overflow-hidden text-white" id="testimonials">
-      {/* Top-Left Framing Bracket: 3 lines (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) — Thinner 3px on mobile, 8px on desktop */}
+      {/* Top-Right Framing Bracket: 3 lines (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) — Inverted to top-right corner */}
       <div className="absolute top-0 left-0 right-0 pointer-events-none z-20 overflow-hidden h-[300px] md:h-[420px]">
-        {/* Line 1 (Outer Blue #55c5d0): Top horizontal + Left vertical drop */}
-        <div className="absolute top-2 md:top-4 left-1.5 md:left-8 w-[65%] md:w-[55%] h-[190px] md:h-[340px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-[#55c5d0]" />
+        {/* Line 1 (Outer Blue #55c5d0): Top horizontal + Right vertical drop */}
+        <div className="absolute top-2 md:top-4 right-1.5 md:right-8 w-[65%] md:w-[55%] h-[190px] md:h-[340px] border-t-[3px] md:border-t-[8px] border-r-[3px] md:border-r-[8px] border-[#55c5d0]" />
 
-        {/* Line 2 (Middle White): Top horizontal + Left vertical drop */}
-        <div className="absolute top-4 md:top-8 left-3 md:left-14 w-[55%] md:w-[50%] h-[175px] md:h-[300px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-white" />
+        {/* Line 2 (Middle White): Top horizontal + Right vertical drop */}
+        <div className="absolute top-4 md:top-8 right-3 md:right-14 w-[55%] md:w-[50%] h-[175px] md:h-[300px] border-t-[3px] md:border-t-[8px] border-r-[3px] md:border-r-[8px] border-white" />
 
-        {/* Line 3 (Inner Blue #55c5d0): Top horizontal + Left vertical drop */}
-        <div className="absolute top-6 md:top-12 left-4.5 md:left-20 w-[45%] md:w-[45%] h-[160px] md:h-[260px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-[#55c5d0]" />
+        {/* Line 3 (Inner Blue #55c5d0): Top horizontal + Right vertical drop */}
+        <div className="absolute top-6 md:top-12 right-4.5 md:right-20 w-[45%] md:w-[45%] h-[160px] md:h-[260px] border-t-[3px] md:border-t-[8px] border-r-[3px] md:border-r-[8px] border-[#55c5d0]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pl-8 sm:pl-16 md:pl-32 pt-4 sm:pt-8 relative z-30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pr-8 sm:pr-16 md:pr-32 pt-4 sm:pt-8 relative z-30">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
