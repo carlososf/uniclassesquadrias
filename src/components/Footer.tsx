@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 export function Footer() {
   return (
@@ -16,14 +16,23 @@ export function Footer() {
             Esquadrias de alumínio de alto padrão para projetos que exigem excelência, design e alta performance.
           </p>
           <div className="flex space-x-3">
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300">
+            <a
+              href="https://www.instagram.com/uniclassesquadrias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300"
+            >
               <FaInstagram />
             </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300">
+            <a
+              href="https://www.facebook.com/uniclassesquadrias/?locale=pt_BR"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300"
+            >
               <FaFacebookF />
-            </a>
-            <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 hover:bg-[#55c5d0] hover:text-white hover:border-[#55c5d0] transition-all duration-300">
-              <FaLinkedinIn />
             </a>
           </div>
         </div>
