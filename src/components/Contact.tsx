@@ -182,11 +182,11 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-3 bg-accent text-white py-4 uppercase tracking-[0.2em] text-xs font-semibold hover:bg-accent/90 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-accent/20 group"
+                  className="w-full flex items-center justify-center gap-2.5 bg-[#55c5d0] text-white py-4 px-4 rounded-sm text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-[#55c5d0]/90 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-[#55c5d0]/25 group cursor-pointer"
                 >
-                  <FaWhatsapp className="text-base" />
-                  Enviar Solicitação via WhatsApp
-                  <HiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                  <FaWhatsapp className="text-lg flex-shrink-0" />
+                  <span className="text-center">Enviar Solicitação via WhatsApp</span>
+                  <HiArrowRight className="text-base flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
 
                 <p className="text-[10px] text-gray-400 text-center leading-relaxed">

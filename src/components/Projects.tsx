@@ -186,7 +186,7 @@ export function Projects() {
       </div>
 
       {/* Houses Photo Grid — Optimized 2-column layout on mobile */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-5 max-w-7xl mx-auto px-3 sm:px-6 pl-8 sm:pl-16 md:pl-32 grid-flow-dense auto-rows-[130px] sm:auto-rows-[225px] relative z-30">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-5 max-w-7xl mx-auto px-3.5 sm:px-6 pl-9 sm:pl-16 md:pl-32 grid-flow-dense auto-rows-[135px] sm:auto-rows-[225px] relative z-30">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
@@ -248,8 +248,8 @@ export function Projects() {
             </div>
 
             {/* Pure Minimalist Multi-Format Photo Grid of Selected Work (2 columns on mobile) */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 grid-flow-dense auto-rows-[140px] md:auto-rows-[240px]">
+            <div className="max-w-7xl mx-auto px-3.5 sm:px-6 py-6 sm:py-8">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3.5 md:gap-6 grid-flow-dense auto-rows-[135px] md:auto-rows-[240px]">
                 {selectedHouse.photos.map((photo, i) => {
                   let photoFormat = 'col-span-1 row-span-1 min-h-[140px] md:min-h-[240px]';
                   if (i % 5 === 0) photoFormat = 'col-span-2 md:col-span-2 row-span-2 min-h-[280px] md:min-h-[480px]';
