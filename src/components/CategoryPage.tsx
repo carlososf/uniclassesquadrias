@@ -71,7 +71,7 @@ export const categoryData: Record<string, CategoryInfo> = {
   },
   projetos: {
     id: 'projetos',
-    title: 'Obras Residenciais Executadas',
+    title: 'Projetos Selecionados',
     subtitle: 'Divisão por casas de alto padrão e suas respectivas obras de esquadria',
     description:
       'Coleção reunida com todas as obras residenciais, frentes de casas e esquadrias sob medida executadas pela Uniclass Esquadrias. Fotos reais sem repetição mostrando a excelência da produção própria e instalação.',
@@ -92,7 +92,7 @@ export const categoryData: Record<string, CategoryInfo> = {
   },
   obras: {
     id: 'obras',
-    title: 'Obras Residenciais Executadas',
+    title: 'Projetos Selecionados',
     subtitle: 'Divisão por casas de alto padrão e suas respectivas obras de esquadria',
     description:
       'Coleção reunida com todas as obras residenciais, frentes de casas e esquadrias sob medida executadas pela Uniclass Esquadrias. Fotos reais sem repetição mostrando a excelência da produção própria e instalação.',
@@ -165,20 +165,20 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
-        className="fixed inset-0 z-50 bg-white overflow-y-auto font-sans"
+        className="fixed inset-0 z-50 bg-black text-white overflow-y-auto font-sans"
       >
         {/* Navigation Bar */}
-        <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 px-6 md:px-12 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-40 bg-black/95 backdrop-blur-md border-b border-white/10 px-6 md:px-12 py-3 flex items-center justify-between h-20 overflow-hidden">
           <button
             onClick={onClose}
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary hover:text-accent font-medium transition-colors group cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white hover:text-accent font-medium transition-colors group cursor-pointer"
           >
             <HiArrowLeft className="text-base group-hover:-translate-x-1 transition-transform duration-200" />
             Voltar para o Início
           </button>
 
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Uniclass" className="h-10 object-contain" />
+          <div className="flex items-center justify-center overflow-visible">
+            <img src="/logo.png" alt="Uniclass" className="h-16 md:h-20 object-contain scale-[1.8] origin-center py-1" />
           </div>
 
           <a
@@ -192,22 +192,13 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-gray-50/80 py-16 md:py-24 border-b border-gray-100">
+        <section className="bg-black py-16 md:py-24 border-b border-white/10">
           <div className="max-w-5xl mx-auto px-6">
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-xs uppercase tracking-[0.35em] text-accent font-semibold mb-3"
-            >
-              Coleção Especializada · Uniclass
-            </motion.p>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-light text-primary font-display mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-light text-white font-display mb-4"
             >
               {category.title}
             </motion.h1>
@@ -216,7 +207,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-gray-500 font-light max-w-2xl leading-relaxed mb-8"
+              className="text-lg text-gray-300 font-light max-w-2xl leading-relaxed mb-8"
             >
               {category.subtitle}
             </motion.p>
@@ -225,13 +216,13 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-200/80"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-white/10"
             >
               <div>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#55c5d0] mb-3">
                   Sobre esta Coleção
                 </h3>
-                <p className="text-sm text-gray-600 font-light leading-relaxed">
+                <p className="text-sm text-gray-300 font-light leading-relaxed">
                   {category.description}
                 </p>
               </div>
@@ -240,7 +231,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#55c5d0] mb-3">
                   Diferenciais Técnicos
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-600 font-light">
+                <ul className="space-y-2 text-sm text-gray-300 font-light">
                   {category.features.map((feat) => (
                     <li key={feat} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0" />
@@ -254,9 +245,9 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
         </section>
 
         {/* Gallery Grid */}
-        <section className="py-16 md:py-24 max-w-7xl mx-auto px-6">
+        <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 bg-black">
           <div className="mb-10 text-center">
-            <h2 className="text-2xl md:text-3xl font-light text-primary font-display">
+            <h2 className="text-2xl md:text-3xl font-light text-white font-display">
               Galeria de Fotos
             </h2>
             <div className="w-12 h-0.5 bg-accent mx-auto mt-3" />
@@ -274,7 +265,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: (index % 4) * 0.08 }}
                 onClick={() => setSelectedImageIndex(index)}
-                className="group relative aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm cursor-pointer shadow-sm hover:shadow-xl transition-all duration-400 border border-gray-100"
+                className="group relative aspect-[4/3] overflow-hidden bg-gray-950 rounded-sm cursor-pointer shadow-sm hover:shadow-xl transition-all duration-400 border border-white/10"
               >
                 <img
                   src={photo}
@@ -282,7 +273,6 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
                   loading="lazy"
                   onError={(e) => {
-                    // Fallback to first photo if missing
                     const t = e.target as HTMLImageElement;
                     t.src = category.photos[0];
                   }}
@@ -298,7 +288,7 @@ export function CategoryPage({ categoryId, onClose }: CategoryPageProps) {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-primary text-white py-16 text-center border-t border-gray-100">
+        <section className="bg-black text-white py-16 text-center border-t border-white/10">
           <div className="max-w-2xl mx-auto px-6 space-y-6">
             <h3 className="text-3xl font-light font-display">
               Gostou destas esquadrias para seu projeto?

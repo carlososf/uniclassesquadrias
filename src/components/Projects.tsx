@@ -147,7 +147,7 @@ export function Projects() {
             Obras em <strong className="font-bold text-[#55c5d0]">Destaque</strong>
           </h2>
           <p className="text-gray-400 font-light mt-3 text-sm max-w-xl leading-relaxed">
-            Mosaico interativo de projetos de alto padrão executados pela Uniclass Esquadrias.
+            Clique na foto da obra para ver o album completo.
           </p>
           <div className="w-16 h-1 bg-[#55c5d0] mt-4"></div>
         </div>
@@ -156,7 +156,7 @@ export function Projects() {
           onClick={() => setSelectedCategory('projetos')}
           className="hidden md:inline-flex items-center gap-2 border-b border-[#55c5d0] pb-1 text-[#55c5d0] hover:text-[#55c5d0]/80 hover:border-[#55c5d0]/80 font-bold text-xs uppercase tracking-widest transition-colors duration-300 cursor-pointer"
         >
-          Ver Galeria Completa de Obras →
+          VER TODAS AS OBRAS EM DESTAQUE →
         </button>
       </div>
 
@@ -190,7 +190,7 @@ export function Projects() {
           onClick={() => setSelectedCategory('projetos')}
           className="inline-block border-b border-[#55c5d0] pb-1 text-[#55c5d0] hover:text-[#55c5d0]/80 hover:border-[#55c5d0]/80 text-xs uppercase tracking-widest font-bold transition-colors duration-300"
         >
-          Ver Galeria Completa de Obras →
+          VER TODAS AS OBRAS EM DESTAQUE →
         </button>
       </div>
 
@@ -213,12 +213,17 @@ export function Projects() {
                 Voltar para Obras
               </button>
 
-              <div className="text-center">
+              <div className="text-center flex flex-col items-center">
                 <h2 className="text-xl md:text-2xl font-light font-display uppercase tracking-widest text-white">
-                  OBRA — <span className="font-bold text-[#55c5d0]">{selectedHouse.name}</span>
+                  OBRA
                 </h2>
-                <p className="text-[10px] text-gray-400 font-light uppercase tracking-widest mt-0.5">
-                  {selectedHouse.location} · {selectedHouse.photos.length} FOTOS
+                {/* Double accent lines: one white, one blue */}
+                <div className="flex flex-col items-center gap-1 my-1.5">
+                  <div className="w-12 h-[2px] bg-white rounded-full"></div>
+                  <div className="w-20 h-[2px] bg-[#55c5d0] rounded-full"></div>
+                </div>
+                <p className="text-[10px] text-gray-400 font-light uppercase tracking-widest">
+                  {selectedHouse.photos.length} FOTOS
                 </p>
               </div>
 
@@ -297,7 +302,7 @@ export function Projects() {
                       className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl"
                     />
                     <p className="mt-4 text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      {fullImageIndex + 1} / {selectedHouse.photos.length} · OBRA {selectedHouse.name}
+                      {fullImageIndex + 1} / {selectedHouse.photos.length} · OBRA
                     </p>
                   </div>
                 </motion.div>

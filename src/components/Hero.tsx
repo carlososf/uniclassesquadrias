@@ -97,7 +97,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-xs uppercase tracking-[0.35em] text-accent font-semibold"
         >
-          Esquadrias de Alumínio · Cotia, SP
+          Esquadrias de Alumínio
         </motion.p>
 
         <motion.h1
@@ -150,21 +150,6 @@ export function Hero() {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-      >
-        <span className="text-white/40 text-[10px] uppercase tracking-[0.3em]">Rolar</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent"
-        />
-      </motion.div>
     </section>
   );
 }
