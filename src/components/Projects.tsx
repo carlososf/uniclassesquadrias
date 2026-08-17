@@ -150,31 +150,31 @@ export function Projects() {
   }, [fullImageIndex, selectedHouse]);
 
   return (
-    <section className="pt-16 pb-24 bg-black text-white relative overflow-hidden" id="projects">
-      {/* Top-Left Framing Bracket: 3 thick flat lines (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) */}
-      <div className="absolute top-0 left-0 right-0 pointer-events-none z-20 overflow-hidden h-[420px]">
+    <section className="pt-12 sm:pt-16 pb-24 bg-black text-white relative overflow-hidden" id="projects">
+      {/* Top-Left Framing Bracket: 3 lines (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) — Thinner 3px on mobile, 8px on desktop */}
+      <div className="absolute top-0 left-0 right-0 pointer-events-none z-20 overflow-hidden h-[300px] md:h-[420px]">
         {/* Line 1 (Outer Blue #55c5d0): Top horizontal + Left vertical drop */}
-        <div className="absolute top-4 left-3 md:left-8 w-[55%] h-[340px] border-t-[8px] border-l-[8px] border-[#55c5d0]" />
+        <div className="absolute top-2 md:top-4 left-1.5 md:left-8 w-[65%] md:w-[55%] h-[190px] md:h-[340px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-[#55c5d0]" />
 
         {/* Line 2 (Middle White): Top horizontal + Left vertical drop */}
-        <div className="absolute top-8 left-7 md:left-14 w-[50%] h-[300px] border-t-[8px] border-l-[8px] border-white" />
+        <div className="absolute top-4 md:top-8 left-3 md:left-14 w-[55%] md:w-[50%] h-[175px] md:h-[300px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-white" />
 
         {/* Line 3 (Inner Blue #55c5d0): Top horizontal + Left vertical drop */}
-        <div className="absolute top-12 left-11 md:left-20 w-[45%] h-[260px] border-t-[8px] border-l-[8px] border-[#55c5d0]" />
+        <div className="absolute top-6 md:top-12 left-4.5 md:left-20 w-[45%] md:w-[45%] h-[160px] md:h-[260px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-[#55c5d0]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pl-12 sm:pl-16 md:pl-32 pt-8 mb-10 md:mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pl-8 sm:pl-16 md:pl-32 pt-4 sm:pt-8 mb-10 md:mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-30">
         <div>
-          <p className="text-xs uppercase tracking-[0.35em] text-[#55c5d0] font-bold mb-2">
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.35em] text-[#55c5d0] font-bold mb-2">
             Portfólio de Residências
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white font-display">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-white font-display">
             Obras em <strong className="font-bold text-[#55c5d0]">Destaque</strong>
           </h2>
-          <p className="text-gray-400 font-light mt-3 text-xs sm:text-sm max-w-xl leading-relaxed">
+          <p className="text-gray-400 font-light mt-2 sm:mt-3 text-xs sm:text-sm max-w-xl leading-relaxed">
             Clique na foto da obra para ver o album completo.
           </p>
-          <div className="w-16 h-1 bg-[#55c5d0] mt-4"></div>
+          <div className="w-12 sm:w-16 h-1 bg-[#55c5d0] mt-3 sm:mt-4"></div>
         </div>
 
         <button
@@ -186,7 +186,7 @@ export function Projects() {
       </div>
 
       {/* Houses Photo Grid — Optimized 2-column layout on mobile */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 max-w-7xl mx-auto px-4 sm:px-6 pl-12 sm:pl-16 md:pl-32 grid-flow-dense auto-rows-[140px] sm:auto-rows-[225px] relative z-30">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-5 max-w-7xl mx-auto px-3 sm:px-6 pl-8 sm:pl-16 md:pl-32 grid-flow-dense auto-rows-[130px] sm:auto-rows-[225px] relative z-30">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
