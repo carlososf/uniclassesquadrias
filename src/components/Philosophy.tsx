@@ -53,36 +53,36 @@ export function Philosophy() {
             </div>
           </motion.div>
 
-          {/* Right — Expanded Factory Photo & Compact Briefing Text Box */}
+          {/* Right — Factory Photo & Philosophy Text Box Side-by-Side on Mobile */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-            className="space-y-6"
+            className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-6"
           >
-            {/* Expanded Factory Image */}
-            <div className="relative h-96 md:h-[440px] overflow-hidden shadow-2xl rounded-sm group bg-gray-900 border border-gray-100">
+            {/* Factory Image */}
+            <div className="relative h-full min-h-[180px] sm:min-h-[220px] md:h-[440px] overflow-hidden shadow-2xl rounded-sm group bg-gray-900 border border-gray-100">
               <img
                 src="/fabrica-uniclass.webp"
                 alt="Fábrica Uniclass Esquadrias"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
-                <span className="text-[10px] uppercase tracking-[0.35em] text-[#55c5d0] font-semibold mb-1">
-                  Produção Própria & Engenharia
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-3 md:p-8">
+                <span className="text-[8px] md:text-[10px] uppercase tracking-[0.25em] text-[#55c5d0] font-semibold mb-0.5">
+                  Produção Própria
                 </span>
-                <p className="text-white font-medium text-lg md:text-xl leading-snug">
-                  Fabricações sob medida com precisão milimétrica
+                <p className="text-white font-medium text-xs md:text-xl leading-tight">
+                  Fabricações sob medida
                 </p>
               </div>
             </div>
 
             {/* Compact Briefing Text Highlight Box */}
-            <div className="bg-primary p-6 md:p-7 text-white shadow-xl border-l-4 border-[#55c5d0] relative rounded-sm">
-              <p className="text-[11px] uppercase tracking-[0.25em] text-[#55c5d0] font-semibold mb-2">
+            <div className="bg-primary p-4 md:p-7 text-white shadow-xl border-l-4 border-[#55c5d0] relative rounded-sm flex flex-col justify-center">
+              <p className="text-[9px] md:text-[11px] uppercase tracking-[0.2em] text-[#55c5d0] font-semibold mb-1.5">
                 Nossa Filosofia & Compromisso
               </p>
-              <p className="text-xs md:text-sm font-light leading-relaxed text-white/90">
+              <p className="text-[11px] md:text-sm font-light leading-relaxed text-white/90">
                 "Atenção, auxílio e coerência entre o prometido e o entregue, é assim que trabalhamos, do início ao fim de cada projeto."
               </p>
             </div>
