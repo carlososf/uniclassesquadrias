@@ -14,7 +14,6 @@ export interface HouseProject {
   location: string;
   description: string;
   mainImage: string;
-  gridClass?: string;
   photos: string[];
 }
 
@@ -25,7 +24,6 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Residência contemporânea de alto padrão com caixilharia de alumínio preta sob medida, vidros laminados e grandes vãos de correr.',
     mainImage: '/gallery/casas/ca-alpha11/ca-alpha11-8.webp',
-    gridClass: 'col-span-1 md:col-span-2 row-span-2 min-h-[420px]',
     photos: Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
   },
   {
@@ -34,7 +32,6 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Projeto de arquitetura imponente com esquadrias de alumínio pretas, fachada com pele de vidro e fechamentos panorâmicos.',
     mainImage: '/gallery/casas/kw-alphaville/kw-alphaville-7.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 12 }, (_, i) => `/gallery/casas/kw-alphaville/kw-alphaville-${i + 1}.webp`),
   },
   {
@@ -43,7 +40,6 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Mansão moderna com grandes vãos de correr nivelados ao contrapiso, caixilharia preta e excelente isolamento termoacústico.',
     mainImage: '/gallery/casas/lc-alphaville/lc-alphaville-1.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
   },
   {
@@ -52,7 +48,6 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Residência de luxo no condomínio Altavis com vidros fixos de grande extensão e estrutura de alumínio sob medida.',
     mainImage: '/gallery/casas/ms-altavis/ms-altavis-1.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
   },
   {
@@ -61,7 +56,6 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Projeto residencial executado em Santana de Parnaíba com caixilharia preta, persianas automatizadas e acabamento técnico impecável.',
     mainImage: '/gallery/casas/rm-altavis/rm-altavis-1.webp',
-    gridClass: 'col-span-1 md:col-span-2 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
   },
   {
@@ -70,7 +64,6 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Arquitetura contemporânea com panos de vidro fixo, esquadrias pretas de alto padrão e portas pivotantes de grande escala.',
     mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
   },
   {
@@ -79,7 +72,6 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Fachada contemporânea integrada com perfis minimalistas e alumínio de alta densidade.',
     mainImage: '/gallery/casas/ca-alpha11/ca-alpha11-3.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
   },
   {
@@ -88,7 +80,6 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Fechamento de varanda com sistema camarão 100% de abertura livre.',
     mainImage: '/gallery/casas/lc-alphaville/lc-alphaville-5.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
   },
   {
@@ -97,8 +88,31 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Grandes vãos envidraçados com caixilhos estruturais para iluminação natural plena.',
     mainImage: '/gallery/casas/ms-altavis/ms-altavis-3.webp',
-    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
+  },
+  {
+    id: 'casa-kw-alphaville-extra',
+    name: 'Pele de Vidro Panorâmica',
+    location: 'Barueri / SP',
+    description: 'Fechamento panorâmico em vidros laminados de alta performance.',
+    mainImage: '/gallery/casas/kw-alphaville/kw-alphaville-3.webp',
+    photos: Array.from({ length: 12 }, (_, i) => `/gallery/casas/kw-alphaville/kw-alphaville-${i + 1}.webp`),
+  },
+  {
+    id: 'casa-rm-altavis-extra',
+    name: 'Portas Deslizantes Minimalistas',
+    location: 'Santana de Parnaíba / SP',
+    description: 'Portas de correr multi-folhas com perfil fino e vedação acústica.',
+    mainImage: '/gallery/casas/rm-altavis/rm-altavis-4.webp',
+    photos: Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
+  },
+  {
+    id: 'casa-vq-alphaville-extra',
+    name: 'Porta Pivotante Monumental',
+    location: 'Barueri / SP',
+    description: 'Entrada principal com porta pivotante em alumínio anodizado de grande escala.',
+    mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-6.webp',
+    photos: Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
   },
 ];
 
@@ -146,20 +160,20 @@ export function Projects() {
         </button>
       </div>
 
-      {/* Houses Photo Grid — Clean photos without text overlay or dark shadows */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 auto-rows-[240px]">
+      {/* Houses Photo Grid — Perfectly filled 12-item 3-column grid without any empty spots */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.06 }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
             onClick={() => {
               setSelectedHouse(house);
               setFullImageIndex(null);
             }}
-            className={`relative group overflow-hidden rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 bg-gray-950 ${house.gridClass}`}
+            className="relative group overflow-hidden rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 bg-gray-950 aspect-[4/3]"
           >
             {/* Clean Image with zoom effect */}
             <img
