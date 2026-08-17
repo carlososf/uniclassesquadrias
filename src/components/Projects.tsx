@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { CategoryPage } from './CategoryPage';
-import { HiArrowRight, HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import { HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export interface ObraItem {
@@ -74,6 +74,33 @@ export const housesData: HouseProject[] = [
     gridClass: 'col-span-1 row-span-1 min-h-[220px]',
     photos: Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
   },
+  {
+    id: 'casa-ca-alpha11-extra',
+    name: 'Fachada & Caixilharia Minimalista',
+    location: 'Barueri / SP',
+    description: 'Fachada contemporânea integrada com perfis minimalistas e alumínio de alta densidade.',
+    mainImage: '/gallery/casas/ca-alpha11/ca-alpha11-3.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
+    photos: Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
+  },
+  {
+    id: 'casa-lc-alphaville-extra',
+    name: 'Sistema Camarão Varanda Gourmet',
+    location: 'Barueri / SP',
+    description: 'Fechamento de varanda com sistema camarão 100% de abertura livre.',
+    mainImage: '/gallery/casas/lc-alphaville/lc-alphaville-5.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
+    photos: Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
+  },
+  {
+    id: 'casa-ms-altavis-extra',
+    name: 'Pé Direito Duplo em Vidro',
+    location: 'Santana de Parnaíba / SP',
+    description: 'Grandes vãos envidraçados com caixilhos estruturais para iluminação natural plena.',
+    mainImage: '/gallery/casas/ms-altavis/ms-altavis-3.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[220px]',
+    photos: Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
+  },
 ];
 
 export function Projects() {
@@ -82,16 +109,16 @@ export function Projects() {
   const [activePhotoIndex, setActivePhotoIndex] = useState<number>(0);
 
   return (
-    <section className="py-24 bg-gray-50/50" id="projects">
+    <section className="py-24 bg-black text-white" id="projects">
       <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-[#55c5d0] font-bold mb-2">
             Portfólio de Residências
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-primary font-display">
+          <h2 className="text-4xl md:text-5xl font-light text-white font-display">
             Obras em <strong className="font-bold text-[#55c5d0]">Destaque</strong>
           </h2>
-          <p className="text-gray-500 font-light mt-3 text-sm max-w-xl leading-relaxed">
+          <p className="text-gray-400 font-light mt-3 text-sm max-w-xl leading-relaxed">
             Mosaico interativo de projetos de alto padrão executados pela Uniclass Esquadrias.
           </p>
           <div className="w-16 h-1 bg-[#55c5d0] mt-4"></div>
@@ -105,7 +132,7 @@ export function Projects() {
         </button>
       </div>
 
-      {/* Houses Photo Mosaic Grid */}
+      {/* Houses Photo Grid — Clean photos without text overlay or dark shadows */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 auto-rows-[240px]">
         {housesData.map((house, index) => (
           <motion.div
@@ -113,41 +140,19 @@ export function Projects() {
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.08 }}
+            transition={{ duration: 0.5, delay: index * 0.06 }}
             onClick={() => {
               setSelectedHouse(house);
               setActivePhotoIndex(0);
             }}
-            className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-md border border-gray-200/80 bg-gray-900 ${house.gridClass}`}
+            className={`relative group overflow-hidden rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 bg-gray-950 ${house.gridClass}`}
           >
-            {/* Image with zoom effect */}
+            {/* Clean Image with zoom effect */}
             <img
               src={house.mainImage}
               alt={house.name}
               className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
             />
-
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 transition-opacity duration-300" />
-
-            {/* Hover Highlight Border */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#55c5d0]/60 transition-colors duration-300 pointer-events-none rounded-sm" />
-
-            {/* Content overlay */}
-            <div className="absolute inset-0 p-6 flex flex-col justify-end text-white z-10">
-              <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#55c5d0] mb-1">
-                {house.location}
-              </span>
-              <h3 className="text-xl md:text-2xl font-medium tracking-wide text-white font-display mb-2">
-                {house.name}
-              </h3>
-
-              {/* Action text */}
-              <div className="inline-flex items-center gap-2 text-xs font-medium text-white/90 group-hover:text-[#55c5d0] transition-colors duration-300 pt-1">
-                <span>Clique aqui para ver essa obra completa</span>
-                <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </div>
           </motion.div>
         ))}
       </div>
@@ -170,7 +175,7 @@ export function Projects() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8 overflow-y-auto select-none"
           >
-            <div className="bg-white w-full max-w-5xl rounded-sm shadow-2xl overflow-hidden my-auto border border-gray-200 max-h-[90vh] flex flex-col">
+            <div className="bg-white w-full max-w-5xl rounded-sm shadow-2xl overflow-hidden my-auto border border-gray-200 max-h-[90vh] flex flex-col text-slate-800">
               {/* Modal Header */}
               <div className="bg-[#55c5d0] text-white p-6 flex items-center justify-between">
                 <div>

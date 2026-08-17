@@ -12,7 +12,6 @@ export function Contact() {
     bairro: '',
     message: '',
   });
-  const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,16 +21,12 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    let textMsg =
+    const textMsg =
       `Olá! Me chamo ${form.firstName} ${form.lastName}.\n` +
       `Cidade: ${form.city}\n` +
       `Bairro: ${form.bairro || 'Não informado'}\n` +
       `Telefone: ${form.phone}\n\n` +
       `Projeto: ${form.message}`;
-
-    if (pdfFile) {
-      textMsg += `\n\n📄 [Arquivo Anexo: ${pdfFile.name}]\nEstou enviando o arquivo PDF em anexo nesta conversa do WhatsApp!`;
-    }
 
     const text = encodeURIComponent(textMsg);
     const phone = '5511972362554'; // Telefone Uniclass
@@ -154,51 +149,20 @@ export function Contact() {
                   </div>
                 </div>
 
-                {/* Bairro + PDF Attachment Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">
-                      Bairro
-                    </label>
-                    <input
-                      type="text"
-                      name="bairro"
-                      value={form.bairro}
-                      onChange={handleChange}
-                      placeholder="Seu bairro"
-                      className="border border-gray-200 px-4 py-3 text-sm font-light text-primary placeholder-gray-300 focus:outline-none focus:border-accent transition-colors duration-200 bg-gray-50/50"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium flex items-center justify-between">
-                      <span>Anexar PDF</span>
-                      <span className="text-[9px] text-gray-400 font-normal lowercase">(projeto/planta)</span>
-                    </label>
-                    <label className="border border-dashed border-gray-300 bg-gray-50/50 hover:bg-white hover:border-accent px-4 py-2.5 flex items-center gap-3 cursor-pointer transition-all duration-200 group rounded-sm">
-                      <FaFilePdf className="text-red-500 text-lg flex-shrink-0 group-hover:scale-110 transition-transform" />
-                      <span className="text-xs text-gray-600 font-light truncate">
-                        {pdfFile ? pdfFile.name : 'Selecionar arquivo .pdf'}
-                      </span>
-                      <input
-                        type="file"
-                        accept=".pdf"
-                        className="hidden"
-                        onChange={(e) => {
-                          if (e.target.files && e.target.files[0]) {
-                            setPdfFile(e.target.files[0]);
-                          }
-                        }}
-                      />
-                    </label>
-                  </div>
+                {/* Bairro Row */}
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">
+                    Bairro
+                  </label>
+                  <input
+                    type="text"
+                    name="bairro"
+                    value={form.bairro}
+                    onChange={handleChange}
+                    placeholder="Seu bairro"
+                    className="border border-gray-200 px-4 py-3 text-sm font-light text-primary placeholder-gray-300 focus:outline-none focus:border-accent transition-colors duration-200 bg-gray-50/50"
+                  />
                 </div>
-
-                {/* PDF Note */}
-                {pdfFile && (
-                  <p className="text-[11px] text-[#55c5d0] font-medium bg-cyan-50 p-2.5 border border-cyan-100 rounded-sm">
-                    📄 Arquivo selecionado: <strong>{pdfFile.name}</strong>. O nome do arquivo será enviado na mensagem e você poderá anexar o PDF diretamente na janela do WhatsApp.
-                  </p>
-                )}
 
                 {/* Message */}
                 <div className="flex flex-col gap-1.5">
