@@ -26,7 +26,13 @@ export function HeroSlider() {
   const currentPhoto = sliderPhotos[currentIndex];
 
   return (
-    <section className="relative w-full h-[70vh] md:h-[85vh] min-h-[500px] bg-black overflow-hidden select-none">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="relative w-full h-[70vh] md:h-[85vh] min-h-[500px] bg-black overflow-hidden select-none"
+    >
       {/* Photo Slide with Seamless Cross-fade (no black flash) */}
       <AnimatePresence>
         <motion.img
@@ -40,6 +46,6 @@ export function HeroSlider() {
           className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 }
