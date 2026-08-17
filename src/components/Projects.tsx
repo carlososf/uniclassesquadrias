@@ -14,6 +14,7 @@ export interface HouseProject {
   location: string;
   description: string;
   mainImage: string;
+  gridClass?: string;
   photos: string[];
 }
 
@@ -24,6 +25,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Residência contemporânea de alto padrão com caixilharia de alumínio preta sob medida, vidros laminados e grandes vãos de correr.',
     mainImage: '/gallery/casas/ca-alpha11/ca-alpha11-8.webp',
+    gridClass: 'col-span-1 md:col-span-2 row-span-2 min-h-[460px]',
     photos: Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
   },
   {
@@ -32,6 +34,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Projeto de arquitetura imponente com esquadrias de alumínio pretas, fachada com pele de vidro e fechamentos panorâmicos.',
     mainImage: '/gallery/casas/kw-alphaville/kw-alphaville-7.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 12 }, (_, i) => `/gallery/casas/kw-alphaville/kw-alphaville-${i + 1}.webp`),
   },
   {
@@ -40,6 +43,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Mansão moderna com grandes vãos de correr nivelados ao contrapiso, caixilharia preta e excelente isolamento termoacústico.',
     mainImage: '/gallery/casas/lc-alphaville/lc-alphaville-1.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
   },
   {
@@ -48,6 +52,7 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Residência de luxo no condomínio Altavis com vidros fixos de grande extensão e estrutura de alumínio sob medida.',
     mainImage: '/gallery/casas/ms-altavis/ms-altavis-1.webp',
+    gridClass: 'col-span-1 row-span-2 min-h-[460px]',
     photos: Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
   },
   {
@@ -56,6 +61,7 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Projeto residencial executado em Santana de Parnaíba com caixilharia preta, persianas automatizadas e acabamento técnico impecável.',
     mainImage: '/gallery/casas/rm-altavis/rm-altavis-1.webp',
+    gridClass: 'col-span-1 md:col-span-2 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
   },
   {
@@ -64,6 +70,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Arquitetura contemporânea com panos de vidro fixo, esquadrias pretas de alto padrão e portas pivotantes de grande escala.',
     mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
   },
   {
@@ -72,6 +79,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Fachada contemporânea integrada com perfis minimalistas e alumínio de alta densidade.',
     mainImage: '/gallery/casas/ca-alpha11/ca-alpha11-3.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 9 }, (_, i) => `/gallery/casas/ca-alpha11/ca-alpha11-${i + 1}.webp`),
   },
   {
@@ -80,6 +88,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Fechamento de varanda com sistema camarão 100% de abertura livre.',
     mainImage: '/gallery/casas/lc-alphaville/lc-alphaville-5.webp',
+    gridClass: 'col-span-1 md:col-span-2 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 11 }, (_, i) => `/gallery/casas/lc-alphaville/lc-alphaville-${i + 1}.webp`),
   },
   {
@@ -88,6 +97,7 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Grandes vãos envidraçados com caixilhos estruturais para iluminação natural plena.',
     mainImage: '/gallery/casas/ms-altavis/ms-altavis-3.webp',
+    gridClass: 'col-span-1 row-span-2 min-h-[460px]',
     photos: Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
   },
   {
@@ -96,6 +106,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Fechamento panorâmico em vidros laminados de alta performance.',
     mainImage: '/gallery/casas/kw-alphaville/kw-alphaville-3.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 12 }, (_, i) => `/gallery/casas/kw-alphaville/kw-alphaville-${i + 1}.webp`),
   },
   {
@@ -104,6 +115,7 @@ export const housesData: HouseProject[] = [
     location: 'Santana de Parnaíba / SP',
     description: 'Portas de correr multi-folhas com perfil fino e vedação acústica.',
     mainImage: '/gallery/casas/rm-altavis/rm-altavis-4.webp',
+    gridClass: 'col-span-1 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
   },
   {
@@ -112,6 +124,7 @@ export const housesData: HouseProject[] = [
     location: 'Barueri / SP',
     description: 'Entrada principal com porta pivotante em alumínio anodizado de grande escala.',
     mainImage: '/gallery/casas/vq-alphaville/vq-alphaville-6.webp',
+    gridClass: 'col-span-1 md:col-span-2 row-span-1 min-h-[225px]',
     photos: Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
   },
 ];
@@ -160,8 +173,8 @@ export function Projects() {
         </button>
       </div>
 
-      {/* Houses Photo Grid — Perfectly filled 12-item 3-column grid without any empty spots */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6">
+      {/* Houses Photo Grid — Dynamic multi-format mosaic grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 grid-flow-dense auto-rows-[225px]">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
@@ -173,7 +186,7 @@ export function Projects() {
               setSelectedHouse(house);
               setFullImageIndex(null);
             }}
-            className="relative group overflow-hidden rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 bg-gray-950 aspect-[4/3]"
+            className={`relative group overflow-hidden rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 bg-gray-950 ${house.gridClass || ''}`}
           >
             {/* Clean Image with zoom effect */}
             <img
@@ -236,26 +249,34 @@ export function Projects() {
               </button>
             </div>
 
-            {/* Minimalist Photo Grid of Selected Work */}
+            {/* Minimalist Multi-Format Photo Grid of Selected Work */}
             <div className="max-w-7xl mx-auto px-6 py-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {selectedHouse.photos.map((photo, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: i * 0.04 }}
-                    onClick={() => setFullImageIndex(i)}
-                    className="group relative aspect-[4/3] overflow-hidden bg-gray-950 rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 shadow-md"
-                  >
-                    <img
-                      src={photo}
-                      alt={`Foto ${i + 1} de OBRA ${selectedHouse.name}`}
-                      className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </motion.div>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 grid-flow-dense auto-rows-[240px]">
+                {selectedHouse.photos.map((photo, i) => {
+                  // Vary photo formats for a rich architectural portfolio look
+                  let photoFormat = 'col-span-1 row-span-1';
+                  if (i % 5 === 0) photoFormat = 'col-span-1 md:col-span-2 row-span-2 min-h-[480px]';
+                  else if (i % 7 === 0) photoFormat = 'col-span-1 row-span-2 min-h-[480px]';
+                  else if (i % 4 === 0) photoFormat = 'col-span-1 md:col-span-2 row-span-1';
+
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: i * 0.04 }}
+                      onClick={() => setFullImageIndex(i)}
+                      className={`group relative overflow-hidden bg-gray-950 rounded-sm cursor-pointer border border-white/10 hover:border-[#55c5d0] transition-colors duration-300 shadow-md ${photoFormat}`}
+                    >
+                      <img
+                        src={photo}
+                        alt={`Foto ${i + 1} de OBRA`}
+                        className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
@@ -298,7 +319,7 @@ export function Projects() {
                   <div className="max-w-5xl max-h-[85vh] relative flex flex-col items-center justify-center">
                     <img
                       src={selectedHouse.photos[fullImageIndex]}
-                      alt={`Foto ${fullImageIndex + 1} de OBRA ${selectedHouse.name}`}
+                      alt={`Foto ${fullImageIndex + 1} de OBRA`}
                       className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl"
                     />
                     <p className="mt-4 text-xs font-mono text-gray-400 uppercase tracking-widest">
