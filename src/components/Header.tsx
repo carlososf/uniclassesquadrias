@@ -74,10 +74,10 @@ export function Header() {
             </a>
           ))}
           <a
-            href="/uniclass%20portifiolio%20att.pdf"
+            href="/portifolio.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="uniclass portifiolio att.pdf"
+            download="portifolio.pdf"
             className="flex items-center gap-2 border border-[#55c5d0]/50 text-[#55c5d0] px-3.5 py-2 text-xs uppercase tracking-[0.15em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 rounded-sm font-semibold"
             title="Abrir Portfólio Uniclass PDF"
           >
@@ -86,7 +86,7 @@ export function Header() {
           </a>
           <a
             href="#contact"
-            className="border border-accent text-accent px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 rounded-sm font-semibold"
+            className="border border-[#55c5d0] text-[#55c5d0] px-5 py-2 text-xs uppercase tracking-[0.2em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 rounded-sm font-semibold"
           >
             Solicitar Orçamento
           </a>
@@ -121,10 +121,10 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/uniclass%20portifiolio%20att.pdf"
+              href="/portifolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="uniclass portifiolio att.pdf"
+              download="portifolio.pdf"
               className="flex items-center justify-center gap-2 border border-[#55c5d0]/50 text-[#55c5d0] px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 rounded-sm font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -133,7 +133,7 @@ export function Header() {
             </a>
             <a
               href="#contact"
-              className="block text-center border border-accent text-accent px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-accent hover:text-white transition-all duration-300 font-semibold"
+              className="block text-center border border-[#55c5d0] text-[#55c5d0] px-6 py-3 text-xs uppercase tracking-[0.2em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
               Solicitar Orçamento

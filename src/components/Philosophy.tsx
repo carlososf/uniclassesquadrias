@@ -83,7 +83,7 @@ export function Philosophy() {
                 Nossa Filosofia & Compromisso
               </p>
               <p className="text-xs md:text-sm font-light leading-relaxed text-white/90">
-                "A Uniclass atua com a convicção de que <strong className="font-semibold text-white">cada detalhe de uma casa importa</strong>. Entendemos que por trás de cada projeto há um sonho, uma conquista e é com essa responsabilidade que tratamos cada entrega. Oferecemos esquadrias de alumínio de alto padrão com precisão técnica. <span className="text-[#55c5d0] font-medium italic">Porque acreditamos que cada detalhe tem o poder de transformar uma casa em lar.</span>"
+                "Atenção, auxílio e coerência entre o prometido e o entregue, é assim que trabalhamos, do início ao fim de cada projeto."
               </p>
             </div>
           </motion.div>

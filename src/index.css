@@ -6,7 +6,7 @@
 
   --color-primary: #111111;
   --color-secondary: #212121;
-  --color-accent: #00BFA5;
+  --color-accent: #55c5d0;
   --color-divider: #EEEEEE;
   --color-off-white: #F9F9F9;
   --color-bold-blue: #55c5d0;
@@ -15,6 +15,16 @@
 
 .text-bold-blue {
   color: #55c5d0;
+}
+
+::selection {
+  background-color: #55c5d0;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #55c5d0;
+  color: #ffffff;
 }
 
 :root {

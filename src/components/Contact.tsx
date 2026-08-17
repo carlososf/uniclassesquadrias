@@ -242,18 +242,18 @@ export function Contact() {
           >
             {/* Portfolio Button Box */}
             <a
-              href="/uniclass%20portifiolio%20att.pdf"
+              href="/portifolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="uniclass portifiolio att.pdf"
-              className="flex items-center gap-4 p-5 bg-gradient-to-r from-[#55c5d0] to-[#00BFA5] text-white shadow-md hover:shadow-xl transition-all duration-300 group rounded-sm"
+              download="portifolio.pdf"
+              className="flex items-center gap-4 p-5 bg-[#55c5d0] text-white shadow-md hover:shadow-xl transition-all duration-300 group rounded-sm"
             >
               <div className="w-11 h-11 bg-white/20 rounded flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
                 <FaFilePdf className="text-white text-xl group-hover:scale-110 transition-transform" />
               </div>
               <div className="flex-1">
                 <p className="text-xs uppercase tracking-wider font-bold">Portfólio Uniclass PDF</p>
-                <p className="text-[11px] text-white/90 font-light mt-0.5">Baixe nosso catálogo completo (uniclass portifiolio att.pdf)</p>
+                <p className="text-[11px] text-white/90 font-light mt-0.5">Baixe nosso catálogo completo</p>
               </div>
               <HiArrowRight className="text-white group-hover:translate-x-1 transition-transform" />
             </a>
@@ -296,8 +296,7 @@ export function Contact() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-3">Nossa Localização & Fábrica</p>
               <p className="text-sm font-light leading-relaxed text-white/90">
                 R. Norberto, 139 - Vila Jovina<br />
-                Cotia - SP, 06705-170<br />
-                <span className="text-xs text-accent mt-2 block">Atendemos toda a Grande São Paulo e interior.</span>
+                Cotia - SP, 06705-170
               </p>
             </div>
           </motion.div>

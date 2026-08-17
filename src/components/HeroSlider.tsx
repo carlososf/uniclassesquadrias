@@ -8,8 +8,8 @@ const sliderPhotos = [
   { src: '/gallery/casas/ms-altavis/ms-altavis-1.webp', alt: 'Obra Uniclass 4' },
   { src: '/gallery/casas/rm-altavis/rm-altavis-1.webp', alt: 'Obra Uniclass 5' },
   { src: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp', alt: 'Obra Uniclass 6' },
-  { src: '/janelas_integradas.png', alt: 'Janelas Integradas Uniclass' },
-  { src: '/projeto-principal.png', alt: 'Projeto Fachada Uniclass' },
+  { src: '/gallery/casas/ms-altavis/ms-altavis-3.webp', alt: 'Obra Uniclass 7' },
+  { src: '/gallery/casas/ca-alpha11/ca-alpha11-2.webp', alt: 'Obra Uniclass 8' },
 ];
 
 export function HeroSlider() {

@@ -7,25 +7,25 @@ const collections = [
     id: 'portas',
     title: 'Portas Pivotantes e Correr',
     description: 'Elegância em grande escala e grandes vãos.',
-    image: '/porta-pivotante.webp',
+    image: '/gallery/casas/vq-alphaville/vq-alphaville-4.webp',
   },
   {
     id: 'janelas',
     title: 'Janelas de Canto e Integradas',
     description: 'Minimalismo funcional e máxima iluminação.',
-    image: '/janela-canto.webp',
+    image: '/gallery/casas/kw-alphaville/kw-alphaville-7.webp',
   },
   {
     id: 'vidros',
     title: 'Vidros Fixos e Fachadas',
     description: 'Transparência absoluta e estrutura limpa.',
-    image: '/faixada-vidro.webp',
+    image: '/gallery/casas/ms-altavis/ms-altavis-1.webp',
   },
   {
     id: 'camarao',
     title: 'Sistemas Camarão e Basculantes',
     description: 'Abertura total e versatilidade de espaço.',
-    image: '/janela-camarao.webp',
+    image: '/gallery/casas/lc-alphaville/lc-alphaville-1.webp',
   },
 ];
 
