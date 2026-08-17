@@ -150,18 +150,20 @@ export function Projects() {
   }, [fullImageIndex, selectedHouse]);
 
   return (
-    <section className="pt-24 pb-32 bg-black text-white relative overflow-hidden" id="projects">
-      {/* 3 L-shaped accent lines (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) curving 90° and extending horizontally across to the right edge */}
-      <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-        {/* Line 1 (Outer Blue #55c5d0) */}
-        <div className="absolute top-0 left-3 md:left-6 right-0 bottom-4 border-l-[5px] border-b-[5px] border-[#55c5d0] rounded-bl-3xl shadow-[0_0_12px_#55c5d0]" />
-        {/* Line 2 (Middle White) */}
-        <div className="absolute top-0 left-6 md:left-10 right-0 bottom-8 border-l-[5px] border-b-[5px] border-white rounded-bl-2xl" />
-        {/* Line 3 (Inner Blue #55c5d0) */}
-        <div className="absolute top-0 left-9 md:left-14 right-0 bottom-12 border-l-[5px] border-b-[5px] border-[#55c5d0] rounded-bl-xl shadow-[0_0_12px_#55c5d0]" />
+    <section className="py-24 bg-black text-white relative overflow-hidden" id="projects">
+      {/* 3 thick flat solid accent lines at the TOP of Obras em Destaque (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) without glow */}
+      <div className="max-w-7xl mx-auto px-6 mb-10">
+        <div className="flex flex-col gap-2 w-full">
+          {/* Top Line (Blue #55c5d0) */}
+          <div className="w-full h-[8px] bg-[#55c5d0]" />
+          {/* Middle Line (White) */}
+          <div className="w-full h-[8px] bg-white" />
+          {/* Bottom Line (Blue #55c5d0) */}
+          <div className="w-full h-[8px] bg-[#55c5d0]" />
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pl-14 md:pl-28 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-30">
+      <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6 relative z-30">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-[#55c5d0] font-bold mb-2">
             Portfólio de Residências
@@ -184,7 +186,7 @@ export function Projects() {
       </div>
 
       {/* Houses Photo Grid — Dynamic multi-format mosaic grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 pl-14 md:pl-28 grid-flow-dense auto-rows-[225px] relative z-30">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 grid-flow-dense auto-rows-[225px] relative z-30">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
