@@ -151,13 +151,14 @@ export function Projects() {
 
   return (
     <section className="py-24 bg-black text-white relative overflow-hidden" id="projects">
-      {/* Dual vertical accent lines on the left margin (1 blue #55c5d0, 1 white) */}
-      <div className="absolute left-3 md:left-8 top-0 bottom-0 flex gap-2 pointer-events-none z-20">
-        <div className="w-[3px] h-full bg-[#55c5d0]" />
-        <div className="w-[3px] h-full bg-white" />
+      {/* Triple thick accent lines on the left margin (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) */}
+      <div className="absolute left-2 md:left-6 top-0 bottom-0 flex gap-2.5 pointer-events-none z-20">
+        <div className="w-[6px] h-full bg-[#55c5d0] rounded-b-full shadow-[0_0_12px_#55c5d0]" />
+        <div className="w-[6px] h-full bg-white rounded-b-full" />
+        <div className="w-[6px] h-full bg-[#55c5d0] rounded-b-full shadow-[0_0_12px_#55c5d0]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pl-10 md:pl-20 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-6 pl-12 md:pl-24 mb-12 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-[#55c5d0] font-bold mb-2">
             Portfólio de Residências
@@ -180,7 +181,7 @@ export function Projects() {
       </div>
 
       {/* Houses Photo Grid — Dynamic multi-format mosaic grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 pl-10 md:pl-20 grid-flow-dense auto-rows-[225px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-6 pl-12 md:pl-24 grid-flow-dense auto-rows-[225px]">
         {housesData.map((house, index) => (
           <motion.div
             key={house.id}
@@ -213,7 +214,7 @@ export function Projects() {
         </button>
       </div>
 
-      {/* Dedicated Minimalist Work Page View */}
+      {/* Dedicated Minimalist Work Page View — Pure Photos, NO text, NO OBRA, NO photo count */}
       <AnimatePresence>
         {selectedHouse && (
           <motion.div
@@ -222,44 +223,29 @@ export function Projects() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black text-white overflow-y-auto select-none"
           >
-            {/* Top Bar Header */}
-            <div className="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-5 flex items-center justify-between">
+            {/* Minimalist Header Bar — ONLY Voltar & Close, NO text or photo counts */}
+            <div className="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-white/10 px-6 py-4 flex items-center justify-between">
               <button
                 onClick={() => setSelectedHouse(null)}
-                className="flex items-center gap-2.5 text-xs uppercase tracking-[0.2em] font-semibold text-[#55c5d0] hover:text-white transition-colors cursor-pointer"
+                className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-[#55c5d0] hover:text-white transition-colors cursor-pointer"
               >
                 <HiArrowLeft className="text-lg" />
-                Voltar para Obras
+                Voltar
               </button>
-
-              <div className="text-center flex flex-col items-center">
-                <h2 className="text-xl md:text-2xl font-light font-display uppercase tracking-widest text-white">
-                  OBRA
-                </h2>
-                {/* Double accent lines: one white, one blue */}
-                <div className="flex flex-col items-center gap-1 my-1.5">
-                  <div className="w-12 h-[2px] bg-white rounded-full"></div>
-                  <div className="w-20 h-[2px] bg-[#55c5d0] rounded-full"></div>
-                </div>
-                <p className="text-[10px] text-gray-400 font-light uppercase tracking-widest">
-                  {selectedHouse.photos.length} FOTOS
-                </p>
-              </div>
 
               <button
                 onClick={() => setSelectedHouse(null)}
-                className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
                 aria-label="Fechar"
               >
-                <HiX className="text-xl" />
+                <HiX className="text-lg" />
               </button>
             </div>
 
-            {/* Minimalist Multi-Format Photo Grid of Selected Work */}
-            <div className="max-w-7xl mx-auto px-6 py-12">
+            {/* Pure Minimalist Multi-Format Photo Grid of Selected Work */}
+            <div className="max-w-7xl mx-auto px-6 py-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 grid-flow-dense auto-rows-[240px]">
                 {selectedHouse.photos.map((photo, i) => {
-                  // Vary photo formats for a rich architectural portfolio look
                   let photoFormat = 'col-span-1 row-span-1';
                   if (i % 5 === 0) photoFormat = 'col-span-1 md:col-span-2 row-span-2 min-h-[480px]';
                   else if (i % 7 === 0) photoFormat = 'col-span-1 row-span-2 min-h-[480px]';
@@ -276,7 +262,7 @@ export function Projects() {
                     >
                       <img
                         src={photo}
-                        alt={`Foto ${i + 1} de OBRA`}
+                        alt=""
                         className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                         loading="lazy"
                       />
@@ -286,7 +272,7 @@ export function Projects() {
               </div>
             </div>
 
-            {/* Lightbox for individual photo zoom */}
+            {/* Lightbox for individual photo zoom — Pure Image, NO text */}
             <AnimatePresence>
               {fullImageIndex !== null && (
                 <motion.div
@@ -325,12 +311,9 @@ export function Projects() {
                   <div className="max-w-5xl max-h-[85vh] relative flex flex-col items-center justify-center">
                     <img
                       src={selectedHouse.photos[fullImageIndex]}
-                      alt={`Foto ${fullImageIndex + 1} de OBRA`}
-                      className="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl"
+                      alt=""
+                      className="max-w-full max-h-[80vh] object-contain rounded-sm shadow-2xl"
                     />
-                    <p className="mt-4 text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      {fullImageIndex + 1} / {selectedHouse.photos.length} · OBRA
-                    </p>
                   </div>
                 </motion.div>
               )}
