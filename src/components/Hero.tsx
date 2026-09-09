@@ -64,7 +64,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <section className="relative min-h-[100dvh] md:min-h-screen flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <video
@@ -86,16 +86,16 @@ export function Hero() {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
         {/* Softened gradient overlay */}
-        <div className="absolute inset-0 bg-black/35 md:bg-gradient-to-r md:from-black/55 md:via-black/30 md:to-transparent z-10" />
+        <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-r md:from-black/55 md:via-black/30 md:to-transparent z-10" />
       </div>
 
       {/* Content */}
-      <div className="relative z-20 w-full md:w-1/2 px-8 md:px-16 flex flex-col justify-center min-h-screen space-y-8 pt-36 pb-16 md:pt-0">
+      <div className="relative z-20 w-full md:w-1/2 px-6 sm:px-8 md:px-16 flex flex-col justify-center min-h-[100dvh] md:min-h-screen space-y-4 sm:space-y-6 md:space-y-8 pt-24 pb-8 sm:pt-36 sm:pb-16 md:pt-0">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-xs uppercase tracking-[0.35em] text-accent font-semibold"
+          className="text-[10px] sm:text-xs uppercase tracking-[0.35em] text-accent font-semibold"
         >
           Esquadrias de Alumínio
         </motion.p>
@@ -104,7 +104,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-thin tracking-tight leading-[1.08] font-display text-white"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-thin tracking-tight leading-[1.12] sm:leading-[1.08] font-display text-white"
         >
           A moldura que<br />
           <span className="font-semibold italic">o seu projeto</span><br />
@@ -115,7 +115,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-base md:text-lg font-light text-white/75 max-w-md border-l-2 border-accent pl-5 leading-relaxed"
+          className="text-xs sm:text-base md:text-lg font-light text-white/80 max-w-md border-l-2 border-accent pl-3.5 sm:pl-5 leading-relaxed"
         >
           Design sob medida e precisão milimétrica em esquadrias de alto padrão.
         </motion.p>
@@ -124,11 +124,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col sm:flex-row flex-wrap gap-4"
+          className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-4 pt-1 sm:pt-2"
         >
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-medium px-8 py-4 uppercase tracking-widest text-xs hover:bg-accent/90 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-accent/30 rounded-sm"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-white font-medium px-6 py-3.5 sm:px-8 sm:py-4 uppercase tracking-widest text-[11px] sm:text-xs hover:bg-accent/90 transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-accent/30 rounded-sm"
           >
             Solicitar Orçamento
           </a>
@@ -137,14 +137,14 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             download="portifolio.pdf"
-            className="inline-flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium px-7 py-4 uppercase tracking-widest text-xs hover:border-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 shadow-lg rounded-sm"
+            className="inline-flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium px-6 py-3.5 sm:px-7 sm:py-4 uppercase tracking-widest text-[11px] sm:text-xs hover:border-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-0.5 shadow-lg rounded-sm"
           >
-            <FaFilePdf className="text-red-400 text-base" />
+            <FaFilePdf className="text-red-400 text-sm sm:text-base" />
             Portfólio (PDF)
           </a>
           <a
             href="#about"
-            className="inline-flex items-center justify-center gap-2 border border-white/30 text-white/80 font-light px-6 py-4 uppercase tracking-widest text-xs hover:border-white hover:text-white transition-all duration-300 rounded-sm"
+            className="hidden sm:inline-flex items-center justify-center gap-2 border border-white/30 text-white/80 font-light px-6 py-3.5 sm:py-4 uppercase tracking-widest text-[11px] sm:text-xs hover:border-white hover:text-white transition-all duration-300 rounded-sm"
           >
             Sobre Nós
           </a>

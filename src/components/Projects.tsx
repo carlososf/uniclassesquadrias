@@ -151,15 +151,10 @@ export function Projects() {
 
   return (
     <section className="pt-12 sm:pt-16 pb-24 bg-black text-white relative overflow-hidden" id="projects">
-      {/* Top-Left Framing Bracket: 3 lines (AZUL #55c5d0 - BRANCO - AZUL #55c5d0) — Thinner 3px on mobile, 8px on desktop */}
+      {/* Top-Left Framing Bracket */}
       <div className="absolute top-0 left-0 right-0 pointer-events-none z-20 overflow-hidden h-[300px] md:h-[420px]">
-        {/* Line 1 (Outer Blue #55c5d0): Top horizontal + Left vertical drop */}
         <div className="absolute top-2 md:top-4 left-1.5 md:left-8 w-[65%] md:w-[55%] h-[190px] md:h-[340px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-[#55c5d0]" />
-
-        {/* Line 2 (Middle White): Top horizontal + Left vertical drop */}
         <div className="absolute top-4 md:top-8 left-3 md:left-14 w-[55%] md:w-[50%] h-[175px] md:h-[300px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-white" />
-
-        {/* Line 3 (Inner Blue #55c5d0): Top horizontal + Left vertical drop */}
         <div className="absolute top-6 md:top-12 left-4.5 md:left-20 w-[45%] md:w-[45%] h-[160px] md:h-[260px] border-t-[3px] md:border-t-[8px] border-l-[3px] md:border-l-[8px] border-[#55c5d0]" />
       </div>
 
@@ -172,7 +167,7 @@ export function Projects() {
             Obras em <strong className="font-bold text-[#55c5d0]">Destaque</strong>
           </h2>
           <p className="text-gray-400 font-light mt-2 sm:mt-3 text-xs sm:text-sm max-w-xl leading-relaxed">
-            Clique na foto da obra para ver o album completo.
+            Clique na foto da obra para ver o álbum completo.
           </p>
           <div className="w-12 sm:w-16 h-1 bg-[#55c5d0] mt-3 sm:mt-4"></div>
         </div>
@@ -185,7 +180,7 @@ export function Projects() {
         </button>
       </div>
 
-      {/* Houses Photo Grid — Optimized 2-column layout on mobile */}
+      {/* Houses Photo Grid — Original Varied Masonry Layout */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-5 max-w-7xl mx-auto px-3.5 sm:px-6 pl-9 sm:pl-16 md:pl-32 grid-flow-dense auto-rows-[135px] sm:auto-rows-[225px] relative z-30">
         {housesData.map((house, index) => (
           <motion.div
@@ -213,13 +208,13 @@ export function Projects() {
       <div className="mt-8 text-center md:hidden">
         <button
           onClick={() => setSelectedCategory('projetos')}
-          className="inline-block border-b border-[#55c5d0] pb-1 text-[#55c5d0] hover:text-[#55c5d0]/80 hover:border-[#55c5d0]/80 text-xs uppercase tracking-widest font-bold transition-colors duration-300"
+          className="inline-block border-b border-[#55c5d0] pb-1 text-[#55c5d0] hover:text-[#55c5d0]/80 text-xs uppercase tracking-widest font-bold transition-colors duration-300"
         >
           VER TODAS AS OBRAS EM DESTAQUE →
         </button>
       </div>
 
-      {/* Dedicated Minimalist Work Page View — Pure Photos, NO text, NO OBRA, NO photo count */}
+      {/* Dedicated Minimalist Work Page View */}
       <AnimatePresence>
         {selectedHouse && (
           <motion.div
@@ -228,7 +223,7 @@ export function Projects() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black text-white overflow-y-auto select-none"
           >
-            {/* Minimalist Header Bar — ONLY Voltar & Close */}
+            {/* Minimalist Header Bar */}
             <div className="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 py-4 flex items-center justify-between">
               <button
                 onClick={() => setSelectedHouse(null)}
@@ -247,7 +242,7 @@ export function Projects() {
               </button>
             </div>
 
-            {/* Pure Minimalist Multi-Format Photo Grid of Selected Work (2 columns on mobile) */}
+            {/* Pure Minimalist Multi-Format Photo Grid of Selected Work */}
             <div className="max-w-7xl mx-auto px-3.5 sm:px-6 py-6 sm:py-8">
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3.5 md:gap-6 grid-flow-dense auto-rows-[135px] md:auto-rows-[240px]">
                 {selectedHouse.photos.map((photo, i) => {
