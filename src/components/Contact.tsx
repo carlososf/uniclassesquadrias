@@ -65,7 +65,7 @@ export function Contact() {
         formData.append(`attachment_${index + 1}`, file, file.name);
       });
 
-      const response = await fetch('https://formsubmit.co/ajax/contato@uniclassesquadrias.com.br', {
+      const response = await fetch('https://formsubmit.co/ajax/comercial@uniclassesquadrias.com.br', {
         method: 'POST',
         body: formData,
         headers: {
@@ -158,7 +158,7 @@ export function Contact() {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-light text-primary font-display">Orçamento Enviado por E-mail!</h3>
                 <p className="text-gray-500 font-light text-xs sm:text-sm max-w-md leading-relaxed">
-                  Agradecemos seu contato, <strong className="font-semibold text-primary">{form.firstName}</strong>. Sua solicitação e arquivos anexados foram entregues no e-mail <span className="text-[#55c5d0] font-medium">contato@uniclassesquadrias.com.br</span>. Responderemos no e-mail <span className="text-[#55c5d0] font-medium">{form.email}</span> em breve!
+                  Agradecemos seu contato, <strong className="font-semibold text-primary">{form.firstName}</strong>. Sua solicitação e arquivos anexados foram entregues no e-mail <span className="text-[#55c5d0] font-medium">comercial@uniclassesquadrias.com.br</span>. Responderemos no e-mail <span className="text-[#55c5d0] font-medium">{form.email}</span> em breve!
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-3 w-full justify-center">
@@ -394,7 +394,7 @@ export function Contact() {
                 </button>
 
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-1.5 text-[10px] text-gray-400 text-center sm:text-left pt-1">
-                  <span>Enviado direto para <strong>contato@uniclassesquadrias.com.br</strong></span>
+                  <span>Enviado direto para <strong>comercial@uniclassesquadrias.com.br</strong></span>
                   <button
                     type="button"
                     onClick={openWhatsappFallback}
@@ -456,7 +456,7 @@ export function Contact() {
 
             {/* Email Direct */}
             <a
-              href="mailto:contato@uniclassesquadrias.com.br"
+              href="mailto:comercial@uniclassesquadrias.com.br"
               className="min-h-[72px] flex items-center justify-between p-4 sm:p-6 bg-white border border-gray-100 hover:border-accent transition-all duration-300 group shadow-sm hover:shadow-md rounded-sm"
             >
               <div className="flex items-center gap-3.5 overflow-hidden">
@@ -465,7 +465,7 @@ export function Contact() {
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-[11px] uppercase tracking-[0.15em] font-bold text-[#55c5d0] group-hover:text-accent transition-colors">E-mail Direct</p>
-                  <p className="text-xs sm:text-sm text-gray-700 font-light mt-0.5 truncate">contato@uniclassesquadrias.com.br</p>
+                  <p className="text-xs sm:text-sm text-gray-700 font-light mt-0.5 truncate">comercial@uniclassesquadrias.com.br</p>
                 </div>
               </div>
               <HiArrowRight className="text-gray-300 group-hover:text-accent transition-colors shrink-0 ml-2" />

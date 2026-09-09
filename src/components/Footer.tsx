@@ -44,7 +44,7 @@ export function Footer() {
             R. Norberto, 139 - Vila Jovina<br />
             Cotia - SP, 06705-170
           </p>
-          <p className="mb-3 text-gray-600">contato@uniclassesquadrias.com.br</p>
+          <p className="mb-3 text-gray-600">comercial@uniclassesquadrias.com.br</p>
           <a
             href="https://wa.me/5511972362554"
             target="_blank"
