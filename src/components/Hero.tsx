@@ -133,10 +133,10 @@ export function Hero() {
             Solicitar Orçamento
           </a>
           <a
-            href="/portifolio.pdf"
+            href="/Portfolio Uniclass.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Portfólio Uniclass.pdf"
+            download="Portfolio Uniclass.pdf"
             className="inline-flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/40 text-white font-medium px-6 py-3.5 sm:px-7 sm:py-4 uppercase tracking-widest text-[11px] sm:text-xs hover:border-white hover:bg-white/20 transition-all duration-300 hover:-translate-y-0.5 shadow-lg rounded-sm"
           >
             <FaFilePdf className="text-red-400 text-sm sm:text-base" />

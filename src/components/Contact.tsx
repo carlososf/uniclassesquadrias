@@ -431,10 +431,10 @@ export function Contact() {
           >
             {/* Portfolio Button Box */}
             <a
-              href="/portifolio.pdf"
+              href="/Portfolio Uniclass.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="Portfólio Uniclass.pdf"
+              download="Portfolio Uniclass.pdf"
               className="min-h-[72px] flex items-center justify-between p-4 sm:p-5 bg-[#55c5d0] text-white shadow-sm hover:shadow-md transition-all duration-300 group rounded-sm"
             >
               <div className="flex items-center gap-3.5">

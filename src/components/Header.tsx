@@ -74,10 +74,10 @@ export function Header() {
             </a>
           ))}
           <a
-            href="/portifolio.pdf"
+            href="/Portfolio Uniclass.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Portfólio Uniclass.pdf"
+            download="Portfolio Uniclass.pdf"
             className="flex items-center gap-2 border border-[#55c5d0]/50 text-[#55c5d0] px-3.5 py-2 text-xs uppercase tracking-[0.15em] hover:bg-[#55c5d0] hover:text-white transition-all duration-300 rounded-sm font-semibold"
             title="Abrir Portfólio Uniclass PDF"
           >
@@ -138,10 +138,10 @@ export function Header() {
                 </a>
 
                 <a
-                  href="/portifolio.pdf"
+                  href="/Portfolio Uniclass.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Portfólio Uniclass.pdf"
+                  download="Portfolio Uniclass.pdf"
                   className="w-full flex items-center justify-center gap-2.5 border border-white/20 text-white px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] rounded-sm hover:border-[#55c5d0]"
                   onClick={() => setMobileMenuOpen(false)}
                 >
