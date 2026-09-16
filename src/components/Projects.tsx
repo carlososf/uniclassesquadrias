@@ -78,9 +78,14 @@ export const housesData: HouseProject[] = [
     name: 'Obra Itu',
     location: 'Itu / SP',
     description: 'Residência de alto padrão em Itu com caixilharia sob medida, vãos panorâmicos integrados e esquadrias de alumínio pretas.',
-    mainImage: '/gallery/casas/obra-itu/obra-itu-1.webp',
+    mainImage: '/gallery/casas/obra-itu/obra-itu-13.webp',
     gridClass: 'col-span-1 row-span-1 min-h-[140px] md:min-h-[225px]',
-    photos: Array.from({ length: 17 }, (_, i) => `/gallery/casas/obra-itu/obra-itu-${i + 1}.webp`),
+    photos: [
+      '/gallery/casas/obra-itu/obra-itu-13.webp',
+      ...Array.from({ length: 17 }, (_, i) => `/gallery/casas/obra-itu/obra-itu-${i + 1}.webp`).filter(
+        (p) => p !== '/gallery/casas/obra-itu/obra-itu-13.webp'
+      ),
+    ],
   },
 ];
 
