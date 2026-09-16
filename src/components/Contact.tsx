@@ -434,7 +434,7 @@ export function Contact() {
               href="/portifolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="Portofilio Uniclass.pdf"
+              download="Portfólio Uniclass.pdf"
               className="min-h-[72px] flex items-center justify-between p-4 sm:p-5 bg-[#55c5d0] text-white shadow-sm hover:shadow-md transition-all duration-300 group rounded-sm"
             >
               <div className="flex items-center gap-3.5">
