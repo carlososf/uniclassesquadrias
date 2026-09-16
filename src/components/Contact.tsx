@@ -47,6 +47,13 @@ export function Contact() {
     setIsSubmitting(true);
     setErrorMessage(null);
 
+    // Verificar limite total de 10MB exigido pelo FormSubmit
+    const totalSize = pdfFiles.reduce((acc, f) => acc + f.size, 0);
+    if (totalSize > 10 * 1024 * 1024) {
+      setErrorMessage(`O tamanho total dos arquivos (${(totalSize / (1024 * 1024)).toFixed(1)}MB) ultrapassa o limite máximo de 10MB por envio. Por favor, remova algum arquivo ou envie diretamente pelo WhatsApp.`);
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append('_subject', `Novo Orçamento: ${form.firstName} ${form.lastName} - Uniclass Esquadrias`);
@@ -61,9 +68,16 @@ export function Contact() {
       formData.append('Bairro', form.bairro || 'Não informado');
       formData.append('Detalhes do Projeto com Medidas', form.message);
 
-      pdfFiles.forEach((file, index) => {
-        formData.append(`attachment_${index + 1}`, file, file.name);
-      });
+      // FormSubmit reconhece 'attachment' para arquivo único ou 'attachment[]' para múltiplos
+      if (pdfFiles.length === 1) {
+        formData.append('attachment', pdfFiles[0], pdfFiles[0].name);
+      } else if (pdfFiles.length > 1) {
+        pdfFiles.forEach((file) => {
+          formData.append('attachment[]', file, file.name);
+          // Adiciona também com o campo tradicional para compatibilidade
+          formData.append('attachment', file, file.name);
+        });
+      }
 
       const response = await fetch('https://formsubmit.co/ajax/comercial@uniclassesquadrias.com.br', {
         method: 'POST',
@@ -420,7 +434,7 @@ export function Contact() {
               href="/portifolio.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="portifolio.pdf"
+              download="Portofilio Uniclass.pdf"
               className="min-h-[72px] flex items-center justify-between p-4 sm:p-5 bg-[#55c5d0] text-white shadow-sm hover:shadow-md transition-all duration-300 group rounded-sm"
             >
               <div className="flex items-center gap-3.5">

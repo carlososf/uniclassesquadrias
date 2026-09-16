@@ -88,6 +88,7 @@ export const categoryData: Record<string, CategoryInfo> = {
       ...Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
       ...Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
       ...Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
+      ...Array.from({ length: 17 }, (_, i) => `/gallery/casas/obra-itu/obra-itu-${i + 1}.webp`),
     ],
   },
   obras: {
@@ -109,6 +110,7 @@ export const categoryData: Record<string, CategoryInfo> = {
       ...Array.from({ length: 15 }, (_, i) => `/gallery/casas/ms-altavis/ms-altavis-${i + 1}.webp`),
       ...Array.from({ length: 14 }, (_, i) => `/gallery/casas/rm-altavis/rm-altavis-${i + 1}.webp`),
       ...Array.from({ length: 10 }, (_, i) => `/gallery/casas/vq-alphaville/vq-alphaville-${i + 1}.webp`),
+      ...Array.from({ length: 17 }, (_, i) => `/gallery/casas/obra-itu/obra-itu-${i + 1}.webp`),
     ],
   },
 };
